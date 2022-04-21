@@ -13,7 +13,7 @@ class CreatePostTable extends Migration
      */
     public function up()
     {
-        Schema::create('post', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id('post_id');
             $table->string('post_slag', 20);
             $table->unsignedBigInteger('gen_id');
@@ -28,7 +28,7 @@ class CreatePostTable extends Migration
 
             // $table->primary('post_id');
 
-            $table->foreign('gen_id')->references('gen_id')->on('genre')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('gen_id')->references('gen_id')->on('genres')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -39,6 +39,6 @@ class CreatePostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post');
+        Schema::dropIfExists('posts');
     }
 }

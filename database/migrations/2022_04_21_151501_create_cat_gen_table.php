@@ -19,8 +19,8 @@ class CreateCatGenTable extends Migration
 
             $table->primary(['cat_id', 'gen_id']);
 
-            $table->foreign('cat_id')->references('cat_id')->on('category')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('gen_id')->references('gen_id')->on('genre')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('cat_id')->references('cat_id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('gen_id')->references('gen_id')->on('genres')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

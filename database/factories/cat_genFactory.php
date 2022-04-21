@@ -2,9 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\category;
+use App\Models\genre;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class categoryFactory extends Factory
+class cat_genFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,8 +17,8 @@ class categoryFactory extends Factory
     {
         return [
             //
-            // cat_id is A_I
-            'cat_name' => $this->faker->text(8),
+            'cat_id' => category::factory(),
+            'gen_id' => genre::factory(),
         ];
     }
 }

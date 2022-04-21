@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class categoryFactory extends Factory
+class tagFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,8 +15,8 @@ class categoryFactory extends Factory
     {
         return [
             //
-            // cat_id is A_I
-            'cat_name' => $this->faker->text(8),
+            // tag_id is A_I
+            'tag_name' => $this->faker->text(5),
         ];
     }
 }

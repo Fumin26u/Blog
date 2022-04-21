@@ -2,9 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\tag;
+use App\Models\post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class categoryFactory extends Factory
+class post_tagFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,8 +17,8 @@ class categoryFactory extends Factory
     {
         return [
             //
-            // cat_id is A_I
-            'cat_name' => $this->faker->text(8),
+            'post_id' => post::factory(),
+            'tag_id' => tag::factory()
         ];
     }
 }

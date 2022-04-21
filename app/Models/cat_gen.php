@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class cat_gen extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
 }

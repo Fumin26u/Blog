@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
         tag::factory(10)->create();
         cat_gen::factory(10)->create();
         post::factory(10)->make([
-            ''
-        ])->save();
+            'post_stats' => 'private'
+        ]);
         post_tag::factory(10)->create();
     }
 }

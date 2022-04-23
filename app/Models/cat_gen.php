@@ -10,4 +10,5 @@ class cat_gen extends Model
     use HasFactory;
 
     public $timestamps = false;
+    protected $table = 'cat_gen';
 }

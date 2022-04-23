@@ -22,7 +22,7 @@ class postFactory extends Factory
             'post_title' => $this->faker->realText(10, 5),
             'post_author' => $this->faker->name(),
             'post_content' => $this->faker->realText(),
-            'post_stats' => $this->text,
+            // 'post_stats' => $this->text(),
             'watch_count' => $this->faker->randomNumber(2),
             'deleted_at' => $this->faker->dateTime(),
         ];

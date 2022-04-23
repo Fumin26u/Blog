@@ -10,4 +10,5 @@ class post_tag extends Model
     use HasFactory;
 
     public $timestamps = false;
+    protected $table = 'post_tag';
 }

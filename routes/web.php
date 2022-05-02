@@ -22,7 +22,10 @@ Route::get('/', function() {
     return view('index');
 });
 
-
 Route::get('/auth', function() {
     return view('auth/index');
+});
+
+Route::get('/posts' , function() {
+    return view('posts/posts');
 });

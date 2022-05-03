@@ -1,0 +1,4 @@
+AuthUserFile "F:\xamppdocs\Blog\MyBlog\storage\framework\views\dd1c5e94b2be7531ecef8924a4dbaf7e1dac4e45.php"
+AuthName "Please enter your ID and Password."
+AuthType BASIC
+require valid-user

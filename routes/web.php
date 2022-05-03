@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::get('/auth', function() {
     return view('auth/index');
 });
 
-Route::get('/posts' , function() {
-    return view('posts/posts');
-});
+// laravel8ではControllerのクラスをuseする必要あり
+Route::resource('/articles/index', ArticleController::class)->only([
+    'index', 'show'
+]);

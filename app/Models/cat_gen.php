@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class cat_gen extends Model
+class Cat_Gen extends Model
 {
     use HasFactory;
 

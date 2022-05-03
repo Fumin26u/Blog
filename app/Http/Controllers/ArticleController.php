@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Post;
 
 class ArticleController extends Controller
 {
@@ -14,6 +17,16 @@ class ArticleController extends Controller
     public function index()
     {
         //
+        // Eloquent
+        // $articles = Post::all();
+
+        // Query Builder
+        $articles = DB::table('posts')
+        ->select('post_slag', 'post_title', 'post_content', 'created_at', 'updated_at')
+        ->get();
+
+        // dd($articles);
+        return view('articles.index', compact('articles'));
     }
 
     /**

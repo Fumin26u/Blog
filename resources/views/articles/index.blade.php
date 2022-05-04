@@ -12,6 +12,5 @@
 @endsection
 
 @section('script')
-<p>You can write Script at here!</p>
 <script></script>
 @endsection

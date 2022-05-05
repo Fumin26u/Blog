@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Post;
+use App\Models\Post_Tag;
+use App\Models\Cat_Gen;
+use App\Models\Category;
+use App\Models\Genre;
+use App\Models\Tag;
 
 class ArticleController extends Controller
 {
@@ -26,7 +31,7 @@ class ArticleController extends Controller
         ->get();
 
         // dd($articles);
-        return view('articles.index', compact('articles'));
+        return view('articles.rear.index', compact('articles'));
     }
 
     /**
@@ -37,6 +42,7 @@ class ArticleController extends Controller
     public function create()
     {
         //
+        return view('articles.rear.create');
     }
 
     /**
@@ -48,6 +54,20 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         //
+        $post = new Post;
+
+        $post->post_slag = $request->input('slag');
+        $post->gen_id = 1;
+        $post->post_title = $request->input('title');
+        $post->post_author = 'fumiya';
+        $post->post_content = $request->input('content');
+        $post->post_stats = $request->input('stats');
+        $post->watch_count = 0;
+
+        $post->save();
+
+        return redirect('articles/rear/index');
+
     }
 
     /**

@@ -24,15 +24,16 @@ Route::get('/', function() {
 });
 
 // laravel8ではControllerのクラスをuseする必要あり
-// 記事編集関連
-Route::prefix('articles/rear')->group(function () {
-    Route::get('/index', [ArticleController::class, 'index']);
-    Route::get('/create', [ArticleController::class, 'create']);
-    Route::post('/store', [ArticleController::class, 'store']);
+Route::prefix('articles/')->group(function () {
+    // 記事編集関連
+    Route::get('rear/index', [ArticleController::class, 'index']);
+    Route::get('rear/create', [ArticleController::class, 'create']);
+    Route::post('rear/store', [ArticleController::class, 'store']);
     // Route::get('/manage', function() {
     //     return view('articles.rear.manage');
     // });
-});
 
-// 記事表示関連
+    // 記事表示関連
+    Route::get('show/{id}', [ArticleController::class, 'show']);
+});
 

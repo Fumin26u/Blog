@@ -79,6 +79,10 @@ class ArticleController extends Controller
     public function show($id)
     {
         //
+        $post = Post::find($id);
+        // dump($post);
+
+        return view('articles.show.index', compact('post'));
     }
 
     /**

@@ -26,7 +26,7 @@ class ArticleController extends Controller
         ->get();
 
         // dd($articles);
-        return view('articles.index', compact('articles'));
+        return view('articles.rear.index', compact('articles'));
     }
 
     /**
@@ -37,6 +37,7 @@ class ArticleController extends Controller
     public function create()
     {
         //
+        return view('articles.rear.create');
     }
 
     /**

@@ -23,11 +23,15 @@ Route::get('/', function() {
     return view('index');
 });
 
-Route::get('/auth', function() {
-    return view('auth/index');
+// laravel8ではControllerのクラスをuseする必要あり
+// 記事編集関連
+Route::prefix('articles/rear')->group(function () {
+    Route::get('/index', [ArticleController::class, 'index']);
+    Route::get('/create', [ArticleController::class, 'create']);
+    // Route::get('/manage', function() {
+    //     return view('articles.rear.manage');
+    // });
 });
 
-// laravel8ではControllerのクラスをuseする必要あり
-Route::resource('/articles/index', ArticleController::class)->only([
-    'index', 'show'
-]);
+// 記事表示関連
+

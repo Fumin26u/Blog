@@ -7,6 +7,7 @@
 </main>
 <a href="./index">index</a>
 <form action="" method="POST">
+    @csrf
     <dl class="post_form">
         <div>
             <dt>スラッグ</dt>
@@ -23,7 +24,7 @@
         <div>
             <dt>内容</dt>
             <dd>
-                <textarea name="content" value=""></textarea>
+                <textarea name="content" id="ckeditor" value=""></textarea>
             </dd>
         </div>
         <div>
@@ -39,7 +40,6 @@
     </dl>
     <input type="submit" value="登録">
 </form>
-<textarea id="ckeditor"></textarea>
 @endsection
 
 @section('script')

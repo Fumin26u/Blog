@@ -28,6 +28,7 @@ Route::get('/', function() {
 Route::prefix('articles/rear')->group(function () {
     Route::get('/index', [ArticleController::class, 'index']);
     Route::get('/create', [ArticleController::class, 'create']);
+    Route::post('/store', [ArticleController::class, 'store']);
     // Route::get('/manage', function() {
     //     return view('articles.rear.manage');
     // });

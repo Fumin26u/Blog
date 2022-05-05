@@ -6,7 +6,7 @@
 <p>only developers can access this site!</p>
 </main>
 <a href="./index">index</a>
-<form action="" method="POST">
+<form action="./store" method="POST">
     @csrf
     <dl class="post_form">
         <div>

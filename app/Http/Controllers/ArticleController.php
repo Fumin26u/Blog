@@ -31,7 +31,7 @@ class ArticleController extends Controller
         ->get();
 
         // dd($articles);
-        return view('articles.rear.index', compact('articles'));
+        return view('articles.index', compact('articles'));
     }
 
     /**
@@ -42,7 +42,7 @@ class ArticleController extends Controller
     public function create()
     {
         //
-        return view('articles.rear.create');
+        return view('articles.create');
     }
 
     /**
@@ -66,7 +66,7 @@ class ArticleController extends Controller
 
         $post->save();
 
-        return redirect('articles/rear/index');
+        return redirect('articles.index');
 
     }
 
@@ -82,7 +82,7 @@ class ArticleController extends Controller
         $post = Post::find($id);
         // dump($post);
 
-        return view('articles.show.index', compact('post'));
+        return view('show.index', compact('post'));
     }
 
     /**
@@ -94,6 +94,10 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
+        $post = Post::find($id);
+        // dd($post);
+
+        return view('articles.edit', compact('post'));
     }
 
     /**
@@ -106,6 +110,19 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $post = Post::find($id);
+
+        $post->post_slag = $request->input('slag');
+        $post->gen_id = 1;
+        $post->post_title = $request->input('title');
+        $post->post_author = 'fumiya';
+        $post->post_content = $request->input('content');
+        $post->post_stats = $request->input('stats');
+        $post->watch_count = 0;
+
+        $post->save();
+
+        return redirect('articles.index');
     }
 
     /**

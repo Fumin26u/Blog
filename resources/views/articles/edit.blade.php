@@ -6,25 +6,25 @@
 <p>only developers can access this site!</p>
 </main>
 <a href="./index">index</a>
-<form action="./store" method="POST">
+<form action="{{ route('articles.update', ['id' => $post->post_id]) }}" method="POST">
     @csrf
     <dl class="post_form">
         <div>
             <dt>スラッグ</dt>
             <dd>
-                <input type="text" name="slag" value="" maxlength="20">
+                <input type="text" name="slag" value="{{ $post->post_slag }}" maxlength="20">
             </dd>
         </div>
         <div>
             <dt>タイトル</dt>
             <dd>
-                <input type="text" name="title" value="" maxlength="255">
+                <input type="text" name="title" value="{{ $post->post_title }}" maxlength="255">
             </dd>
         </div>
         <div>
             <dt>内容</dt>
             <dd>
-                <textarea name="content" id="ckeditor" value=""></textarea>
+                <textarea name="content" id="ckeditor" value="">{{ $post->post_content }}</textarea>
             </dd>
         </div>
         <div>

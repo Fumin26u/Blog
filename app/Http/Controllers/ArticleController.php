@@ -110,6 +110,7 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         //
+        dd($request);
         $post = Post::find($id);
 
         $post->post_slag = $request->input('slag');

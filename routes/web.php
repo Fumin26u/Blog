@@ -26,14 +26,14 @@ Route::get('/', function() {
 // laravel8ではControllerのクラスをuseする必要あり
 Route::prefix('articles/')->group(function () {
     // 記事編集関連
-    Route::get('index', [ArticleController::class, 'index']);
-    Route::get('create', [ArticleController::class, 'create']);
-    Route::post('store', [ArticleController::class, 'store']);
-    Route::get('edit/{id}', [ArticleController::class, 'edit']);
-    Route::post('update/{id}', [ArticleController::class, 'update']);
+    Route::get('index', [ArticleController::class, 'index'])->name('articles/index');
+    Route::get('create', [ArticleController::class, 'create'])->name('articles/create');
+    Route::post('store', [ArticleController::class, 'store'])->name('articles/store');
+    Route::get('edit/{id}', [ArticleController::class, 'edit'])->name('articles/edit');
+    Route::post('update/{id}', [ArticleController::class, 'update'])->name('articles/update');
 });
 
 // 記事表示関連
-Route::get('show/{id}', [ArticleController::class, 'show']);
+Route::get('show/{id}', [ArticleController::class, 'show'])->name('show');
 
 

@@ -31,7 +31,7 @@ class ArticleController extends Controller
         ->get();
 
         // dd($articles);
-        return view('articles.index', compact('articles'));
+        return view('articles/index', compact('articles'));
     }
 
     /**
@@ -42,7 +42,7 @@ class ArticleController extends Controller
     public function create()
     {
         //
-        return view('articles.create');
+        return view('articles/create');
     }
 
     /**
@@ -66,7 +66,7 @@ class ArticleController extends Controller
 
         $post->save();
 
-        return redirect('articles.index');
+        return redirect('articles/index');
 
     }
 
@@ -82,7 +82,7 @@ class ArticleController extends Controller
         $post = Post::find($id);
         // dump($post);
 
-        return view('show.index', compact('post'));
+        return view('show/index', compact('post'));
     }
 
     /**
@@ -97,7 +97,7 @@ class ArticleController extends Controller
         $post = Post::find($id);
         // dd($post);
 
-        return view('articles.edit', compact('post'));
+        return view('articles/edit', compact('post'));
     }
 
     /**
@@ -110,7 +110,6 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         //
-        dd($request);
         $post = Post::find($id);
 
         $post->post_slag = $request->input('slag');
@@ -123,7 +122,7 @@ class ArticleController extends Controller
 
         $post->save();
 
-        return redirect('articles.index');
+        return redirect('articles/index');
     }
 
     /**

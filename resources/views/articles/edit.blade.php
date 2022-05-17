@@ -6,7 +6,7 @@
 <p>only developers can access this site!</p>
 </main>
 <a href="./index">index</a>
-<form action="{{ route(url('articles/update'), ['id' => $post->post_id]) }}" method="POST">
+<form action="{{ route('articles/update', ['id' => $post->post_id]) }}" method="POST">
     @csrf
     <dl class="post_form">
         <input type="hidden" name="id" value="{{ $post->post_id }}">

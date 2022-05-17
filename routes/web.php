@@ -31,15 +31,9 @@ Route::prefix('articles/')->group(function () {
     Route::post('store', [ArticleController::class, 'store']);
     Route::get('edit/{id}', [ArticleController::class, 'edit']);
     Route::post('update/{id}', [ArticleController::class, 'update']);
-    // Route::get('/manage', function() {
-    //     return view('articles.rear.manage');
-    // });
-
-
 });
 
-Route::prefix('show/')->group(function() {
-    // 記事表示関連
-    Route::get('{id}', [ArticleController::class, 'show']);
-});
+// 記事表示関連
+Route::get('show/{id}', [ArticleController::class, 'show']);
+
 

@@ -31,6 +31,7 @@ Route::prefix('articles/')->group(function () {
     Route::post('store', [ArticleController::class, 'store'])->name('articles/store');
     Route::get('edit/{id}', [ArticleController::class, 'edit'])->name('articles/edit');
     Route::post('update/{id}', [ArticleController::class, 'update'])->name('articles/update');
+    Route::post('destroy/{id}', [ArticleController::class, 'destroy'])->name('articles/destroy');
 });
 
 // 記事表示関連

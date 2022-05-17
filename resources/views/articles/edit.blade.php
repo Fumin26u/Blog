@@ -41,6 +41,10 @@
     </dl>
     <input type="submit" value="登録">
 </form>
+<form action="{{ route('articles/destroy', ['id' => $post->post_id]) }}" method="POST" id="delete_{{ $post->post_id }}">
+    @csrf
+        <input type="submit" value="削除">
+</form>
 @endsection
 
 @section('script')
@@ -77,5 +81,13 @@
         // タブの入力を無効にする
         tabSpaces: 0,
     });
-  </script>
+</script>
+<script>
+    // funciton deletePostAlert(e) {
+    //     'use strict';
+    //     if (confirm('本当に削除しますか？')) {
+    //         document.getElementById('delete_' + e.dataset.id).submit();
+    //     }
+    // }
+</script>
 @endsection

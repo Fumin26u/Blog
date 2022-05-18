@@ -34,6 +34,9 @@ Route::prefix('articles/')->group(function () {
     Route::post('destroy/{id}', [ArticleController::class, 'destroy'])->name('articles/destroy');
 });
 
+// ckeditorの画像アップロード用
+Route::post('ckeditor/images', 'UploadImageController@upload')->name('ckeditor/images');
+
 // 記事表示関連
 Route::get('show/{id}', [ArticleController::class, 'show'])->name('show');
 

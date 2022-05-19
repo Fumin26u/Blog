@@ -24,15 +24,20 @@ Route::get('/', function() {
 });
 
 // laravel8ではControllerのクラスをuseする必要あり
-// 記事編集関連
-Route::prefix('articles/rear')->group(function () {
-    Route::get('/index', [ArticleController::class, 'index']);
-    Route::get('/create', [ArticleController::class, 'create']);
-    Route::post('/store', [ArticleController::class, 'store']);
-    // Route::get('/manage', function() {
-    //     return view('articles.rear.manage');
-    // });
+Route::prefix('articles/')->group(function () {
+    // 記事編集関連
+    Route::get('index', [ArticleController::class, 'index'])->name('articles/index');
+    Route::get('create', [ArticleController::class, 'create'])->name('articles/create');
+    Route::post('store', [ArticleController::class, 'store'])->name('articles/store');
+    Route::get('edit/{id}', [ArticleController::class, 'edit'])->name('articles/edit');
+    Route::post('update/{id}', [ArticleController::class, 'update'])->name('articles/update');
+    Route::post('destroy/{id}', [ArticleController::class, 'destroy'])->name('articles/destroy');
 });
 
+// ckeditorの画像アップロード用
+Route::post('ckeditor/images', 'UploadImageController@upload')->name('ckeditor/images');
+
 // 記事表示関連
+Route::get('show/{id}', [ArticleController::class, 'show'])->name('show');
+
 

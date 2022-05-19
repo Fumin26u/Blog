@@ -12,7 +12,7 @@
     {{ $post->gen_id }} <br>
     {{ $post->post_title }} <br>
     {{ $post->post_author }} <br>
-    {{ $post->post_content }} <br>
+    {!! $post->post_content !!} <br>
     {{ $post->post_stats }} <br>
     {{ $post->watch_count }} <br>
     {{ $post->cretaed_at }} <br>

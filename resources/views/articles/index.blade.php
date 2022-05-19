@@ -9,6 +9,7 @@
 <div class="article" style="margin: 2em auto">
     <p>{{ $article->post_title }}</p>
     <p>{{ $article->created_at }}</p>
+    <a href="{{ '../show/' . $article->post_id }}">表示</a>
     <a href="{{ 'edit/' . $article->post_id }}">編集</a>
 </div>
 @endforeach

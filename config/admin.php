@@ -412,7 +412,7 @@ return [
 
             // Editor configuration
             'config' => [
-
+                'filebrowserImageUploadUrl' => '/admin/upload',
             ],
         ]
     ],

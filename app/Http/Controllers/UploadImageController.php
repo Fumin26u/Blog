@@ -1,42 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Admin\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class UploadImageController extends Controller
+class FileUploadController extends Controller
 {
-    /**
-     * uploading images of CKEditor
-     *
-     * @param Request $request
-     */
 
-    public function upload(Request $request) {
-        if ($request->hasFile('upload')) {
-            $file = $request->file('upload');
-            // var_dump($file);
+    public function index(Request $request)
+    {
+        $image = $request->file('upload');
 
-            // 保存用ファイル名を生成
-            $storeFilename =
-                // ファイル名
-                pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME).
-                // 名前の重複対策(アップロード時間の付与)
-                '_'. time(). '.'.
-                // 拡張子をつける
-                $file->getClientOriginalExtension();
+        $path = $image->store('/admin/image', 'admin'); // ランダム文字列のファイル名で保存する
+        $fileName = pathinfo($path)['basename']; // 保存後のファイル名を取得
 
-            // アップロード処理
-            $file->storeAs('public/uploads', $storeFilename);
-            // ckeditor.jsに返却するデータを生成する
-            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $url = asset('storage/uploads/'. $storeFilename);
-            $msg = 'アップロードが完了しました';
-            $res = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+        $url = "/uploads/admin/image/" . $fileName; // アップロードした後に画像が見れるURLを設定してください
 
-            // HTMLを返す
-            @header('Content-type: text/html; charset=utf-8');
-            echo $res;
-        }
+        $param = [
+            'uploaded' => 1,
+            'fileName' => $fileName,
+            'url'      => $url
+        ];
+
+        return response()->json($param, 200);
     }
 }

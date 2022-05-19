@@ -15,6 +15,7 @@ class UploadImageController extends Controller
     public function upload(Request $request) {
         if ($request->hasFile('upload')) {
             $file = $request->file('upload');
+            // var_dump($file);
 
             // 保存用ファイル名を生成
             $storeFilename =

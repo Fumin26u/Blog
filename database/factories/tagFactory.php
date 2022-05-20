@@ -16,6 +16,7 @@ class tagFactory extends Factory
         return [
             //
             // tag_id is A_I
+            'tag_slag' => $this->faker->text(5),
             'tag_name' => $this->faker->text(5),
         ];
     }

@@ -5,7 +5,7 @@
 <h1>test</h1>
 <p>only developers can access this site!</p>
 </main>
-<a href="./index">index</a>
+<a href="../index">index</a>
 <form action="./store" method="POST">
     @csrf
     <dl class="post_form">
@@ -25,6 +25,16 @@
             <dt>内容</dt>
             <dd>
                 <textarea name="content" id="ckeditor" value="">@if(isset($post)) {{ $post->post_content }} @endif</textarea>
+            </dd>
+        </div>
+        <div>
+            <dt>ジャンル</dt>
+            <dd>
+                <select name="genre" id="post_genres">
+                    @foreach ($genres as $genre)
+                    <option value="{{ $genre->gen_slag }}" @if(isset($post) && $post->gen_slag === $genre) selected @endif>{{ $genre->gen_name }}</option>
+                    @endforeach
+                </select>
             </dd>
         </div>
         <div>

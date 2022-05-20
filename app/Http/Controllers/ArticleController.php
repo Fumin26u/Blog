@@ -46,6 +46,20 @@ class ArticleController extends Controller
     }
 
     /**
+     * Get genre list for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showGenres()
+    {
+        //
+        $genres = DB::table('genres')
+        ->get();
+
+        return view('articles/create', compact('genres'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -54,10 +68,16 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         //
+        $gi = DB::table('genres')
+        ->select('gen_id')
+        ->where('gen_slag', $request->input('genre'))
+        ->get();
+        $gen_id = $gi[0]->gen_id;
+
         $post = new Post;
 
         $post->post_slag = $request->input('slag');
-        $post->gen_id = 1;
+        $post->gen_id = $gen_id;
         $post->post_title = $request->input('title');
         $post->post_author = 'fumiya';
         $post->post_content = $request->input('content');
@@ -97,7 +117,10 @@ class ArticleController extends Controller
         $post = Post::find($id);
         // dd($post);
 
-        return view('articles/edit', compact('post'));
+        $genres = DB::table('genres')
+        ->get();
+
+        return view('articles/edit', compact('post', 'genres'));
     }
 
     /**
@@ -110,10 +133,16 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $gi = DB::table('genres')
+        ->select('gen_id')
+        ->where('gen_slag', $request->input('genre'))
+        ->get();
+        $gen_id = $gi[0]->gen_id;
+
         $post = Post::find($id);
 
         $post->post_slag = $request->input('slag');
-        $post->gen_id = 1;
+        $post->gen_id = $gen_id;
         $post->post_title = $request->input('title');
         $post->post_author = 'fumiya';
         $post->post_content = $request->input('content');

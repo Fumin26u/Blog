@@ -20,10 +20,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        category::factory(10)->create();
-        genre::factory(20)->create();
+        // category::factory(10)->create();
+        // genre::factory(20)->create();
         tag::factory(10)->create();
-        cat_gen::factory(10)->create();
+        // cat_gen::factory(10)->create();
         post::factory(10)->make([
             'post_stats' => 'private'
         ]);

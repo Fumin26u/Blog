@@ -46,6 +46,20 @@ class ArticleController extends Controller
     }
 
     /**
+     * Get genre list for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showGenres()
+    {
+        //
+        $genres = DB::table('genres')
+        ->get();
+
+        return view('articles/create', compact('genres'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

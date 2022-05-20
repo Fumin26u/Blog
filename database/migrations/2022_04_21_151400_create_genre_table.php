@@ -15,6 +15,7 @@ class CreateGenreTable extends Migration
     {
         Schema::create('genres', function (Blueprint $table) {
             $table->id('gen_id');
+            $table->string('gen_slag');
             $table->string('gen_name', 20);
 
             // $table->primary('gen_id');

@@ -16,6 +16,7 @@ class genreFactory extends Factory
         return [
             //
             // gen_id is A_I
+            'gen_slag' => $this->faker->text(8),
             'gen_name' => $this->faker->text(8),
         ];
     }

@@ -16,6 +16,7 @@ class categoryFactory extends Factory
         return [
             //
             // cat_id is A_I
+            'cat_slag' => $this->faker->text(8),
             'cat_name' => $this->faker->text(8),
         ];
     }

@@ -28,6 +28,16 @@
             </dd>
         </div>
         <div>
+            <dt>ジャンル</dt>
+            <dd>
+                <select name="genre" id="post_genres">
+                    @foreach ($genres as $genre)
+                    <option value="{{ $genre->gen_slag }}">{{ $genre->gen_name }}</option>
+                    @endforeach
+                </select>
+            </dd>
+        </div>
+        <div>
             <dt>公開設定</dt>
             <dd>
                 <select name="stats" id="">

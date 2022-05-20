@@ -29,12 +29,22 @@
             </dd>
         </div>
         <div>
+            <dt>ジャンル</dt>
+            <dd>
+                <select name="genre" id="post_genres">
+                    @foreach ($genres as $genre)
+                    <option value="{{ $genre->gen_slag }}" @if(isset($post) && $post->gen_id === $genre->gen_id) {{ 'selected' }} @endif>{{ $genre->gen_name }}</option>
+                    @endforeach
+                </select>
+            </dd>
+        </div>
+        <div>
             <dt>公開設定</dt>
             <dd>
                 <select name="stats" id="">
-                    <option value="pending">編集中</option>
-                    <option value="private">非公開</option>
-                    <option value="public">公開</option>
+                    <option value="pending" @if(isset($post) && $post->post_stats === 'pending') {{'selected'}} @endif>編集中</option>
+                    <option value="private" @if(isset($post) && $post->post_stats === 'private') {{'selected'}} @endif>非公開</option>
+                    <option value="public" @if(isset($post) && $post->post_stats === 'public') {{'selected'}} @endif>公開</option>
                 </select>
             </dd>
         </div>
@@ -43,7 +53,7 @@
 </form>
 <form action="{{ route('articles/destroy', ['id' => $post->post_id]) }}" method="POST" id="delete_{{ $post->post_id }}">
     @csrf
-        <input type="submit" value="削除">
+        {{-- <input type="submit" value="削除"> --}}
 </form>
 @endsection
 

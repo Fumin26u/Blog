@@ -28,11 +28,17 @@ Route::get('/', function() {
 Route::prefix('articles/')->group(function () {
     // 記事編集関連
     Route::get('index', [ArticleController::class, 'index'])->name('articles/index');
+
     Route::get('create', [ArticleController::class, 'create'])->name('articles/create');
     Route::get('create', [ArticleController::class, 'showGenres'])->name('articles/create');
+
     Route::post('store', [ArticleController::class, 'store'])->name('articles/store');
+
     Route::get('edit/{id}', [ArticleController::class, 'edit'])->name('articles/edit');
+    // Route::get('edit/{id}', [ArticleController::class, 'editGenres'])->name('articles/edit');
+
     Route::post('update/{id}', [ArticleController::class, 'update'])->name('articles/update');
+
     Route::post('destroy/{id}', [ArticleController::class, 'destroy'])->name('articles/destroy');
 });
 // 記事表示関連

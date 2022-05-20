@@ -68,10 +68,16 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         //
+        $gi = DB::table('genres')
+        ->select('gen_id')
+        ->where('gen_slag', $request->input('genre'))
+        ->get();
+        $gen_id = $gi[0]->gen_id;
+
         $post = new Post;
 
         $post->post_slag = $request->input('slag');
-        $post->gen_id = 1;
+        $post->gen_id = $gen_id;
         $post->post_title = $request->input('title');
         $post->post_author = 'fumiya';
         $post->post_content = $request->input('content');

@@ -4,7 +4,7 @@
 <main>
 <h1>test</h1>
 <p>Here is one of the Article of this blog!</p>
-<a href="./create">新規登録</a>
+<a href="../articles/create">新規登録</a>
 {{-- {{ dump($post) }} --}}
 <p>
     {{ $post->post_id }} <br>

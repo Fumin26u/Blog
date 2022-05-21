@@ -2,23 +2,19 @@
 
 @section('content')
 <main>
-<h1>test</h1>
-<p>Here is one of the Article of this blog!</p>
-<a href="../articles/create">新規登録</a>
-{{-- {{ dump($post) }} --}}
-<p>
-    {{ $post->post_id }} <br>
-    {{ $post->post_slag }} <br>
-    {{ $post->gen_id }} <br>
-    {{ $post->post_title }} <br>
-    {{ $post->post_author }} <br>
-    {!! $post->post_content !!} <br>
-    {{ $post->post_stats }} <br>
-    {{ $post->watch_count }} <br>
-    {{ $post->cretaed_at }} <br>
-    {{ $post->updated_at }} <br>
-    {{ $post->deleted_at }} <br>
-</p>
+<h1>{{ $post->post_title }}</h1>
+
+<section class="detail_area">
+    <p class="author"><small>投稿者: {{ $post->post_author }}</small></p>
+    <p class="author"><small>作成日: {{ $post->created_at }}</small></p>
+    <p class="author"><small>更新日: {{ $post->updated_at }}</small></p>
+</section>
+
+<section class="post_content">
+    <div>{!! $post->post_content !!}</div>
+</section>
+
+<a href="../articles/create">記事の新規登録</a>
 </main>
 @endsection
 

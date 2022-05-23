@@ -9,7 +9,11 @@
         //     "./css/sample.css",
         // ],
         toolbar_Custom: [
-            ['CodeSnippet'],
+            'codesnippet',
+            'widget',
+            'lineutils',
+            'dialog',
+            'dialogui'
         ],
         // スペルチェック機能OFF
         scayt_autoStartup: false,

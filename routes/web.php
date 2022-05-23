@@ -23,9 +23,12 @@ use App\Http\Controllers\CatGenController;
 Route::get('/', function() {
     return view('index');
 });
+Route::get('/index', function() {
+    return view('index');
+});
 
 // laravel8ではControllerのクラスをuseする必要あり
-Route::prefix('articles/')->group(function () {
+Route::prefix('articles/')->middleware('auth')->group(function () {
     // 記事編集関連
     Route::get('index', [ArticleController::class, 'index'])->name('articles/index');
 
@@ -48,7 +51,7 @@ Route::get('show/{id}', [ArticleController::class, 'show'])->name('show');
 Route::post('ckeditor/images', 'UploadImageController@upload')->name('ckeditor/images');
 
 // カテゴリ・ジャンル関連
-Route::prefix('cg/')->group(function () {
+Route::prefix('cg/')->middleware('auth')->group(function () {
     Route::get('index', [CatGenController::class, 'index'])->name('cg/index');
     Route::get('create', [CatGenController::class, 'create'])->name('cg/create');
     Route::post('store', [CatGenController::class, 'store'])->name('cg/store');
@@ -58,6 +61,6 @@ Route::prefix('cg/')->group(function () {
     Route::post('destroy/{id}', [CatGenController::class, 'destroy'])->name('cg/destroy');
 });
 
+Auth::routes();
 
-
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

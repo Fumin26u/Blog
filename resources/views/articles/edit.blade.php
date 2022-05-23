@@ -5,7 +5,7 @@
 <h1>test</h1>
 <p>only developers can access this site!</p>
 </main>
-<a href="./index">index</a>
+<a href="../index">index</a>
 <form action="{{ route('articles/update', ['id' => $post->post_id]) }}" method="POST">
     @csrf
     <dl class="post_form">
@@ -58,6 +58,6 @@
 @endsection
 
 @section('script')
-<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script src="{{ asset('/js/CKEditor.js') }}"></script>
 @endsection

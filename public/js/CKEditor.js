@@ -8,6 +8,13 @@
         // contentsCss: [
         //     "./css/sample.css",
         // ],
+        toolbar_Custom: [
+            'codesnippet',
+            'widget',
+            'lineutils',
+            'dialog',
+            'dialogui'
+        ],
         // スペルチェック機能OFF
         scayt_autoStartup: false,
         // Enterを押した際に改行タグを挿入

@@ -8,6 +8,9 @@
         // contentsCss: [
         //     "./css/sample.css",
         // ],
+        toolbar_Custom: [
+            ['CodeSnippet'],
+        ],
         // スペルチェック機能OFF
         scayt_autoStartup: false,
         // Enterを押した際に改行タグを挿入

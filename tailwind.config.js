@@ -6,6 +6,10 @@ module.exports = {
     content: [],
     theme: {
         extend: {},
+        fontFamily: {
+            'heading': ['Ostrich Sans', 'メイリオ', 'Meiryo', 'Arial'],
+            'meiryo': ['メイリオ', 'Meiryo', 'Arial']
+        },
         colors: {
             white: {
                 light: '#FFFFFF',
@@ -16,6 +20,9 @@ module.exports = {
             },
             green: {
                 DEFAULT: '#0E8F00',
+            },
+            brown: {
+                DEFAULT: '#32160B',
             },
             black: {
                 DEFAULT: '#1B110D',

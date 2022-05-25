@@ -10,7 +10,11 @@
 -------------------- */
 /* 共通 */
 a {
-    @apply hover:underline;
+    @apply hover:underline cursor-pointer;
+}
+
+input[type="submit"] {
+    @apply cursor-pointer;
 }
 
 /* セクション間margin */
@@ -47,6 +51,11 @@ main section .content {
 }
 .post-list li a {
     @apply text-lg hover:underline;
+}
+
+/* submitボタン */
+.btn-submit {
+    @apply px-3 py-1.5 border-2 border-solid transition-all duration-200;
 }
 
 /* --------------------

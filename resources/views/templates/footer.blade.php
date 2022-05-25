@@ -36,7 +36,7 @@
                     value="@if(isset($_GET['header-search'])) {{$_GET['header-search']}} @endif"
                     placeholder=" 記事を検索"
                 >
-                <input type="submit" value="検索" class="px-3 py-1.5 border-2 border-solid border-white">
+                <input type="submit" value="検索" class="btn-submit border-white hover:text-black hover:bg-white">
             </form>
         </section>
     </div>

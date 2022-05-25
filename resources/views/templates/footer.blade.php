@@ -16,7 +16,7 @@
                         <ul id="gnav-gens" class="hidden">
                             @foreach($gn['genres'] as $ge)
                                 <li>
-                                    <a href="{{ asset('/search?word=' . $ge['gen_slag']) }}"">
+                                    <a href="{{ asset('/search?word=' . $ge['gen_slag']) }}">
                                         <p>{{ $ge['gen_name'] }}</p>
                                     </a>
                                 </li>

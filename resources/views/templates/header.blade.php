@@ -1,7 +1,7 @@
 <header class="h-full py-3 bg-brown text-white box-border shadow-lg">
 <div class="header-content flex justify-between items-center max-w-7xl mx-auto">
     <section class="header-title font-heading w-1/5">
-        <a href="{{ url('/') }}">
+        <a href="{{ url('/') }}" class="hover:no-underline">
             <p class="blog-name text-5xl">Fu-minBlog</p>
             <p class="blog-desc text-xs">ブログの説明欄</p>
         </a>

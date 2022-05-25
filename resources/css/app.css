@@ -8,6 +8,11 @@
     共通パーツ
 
 -------------------- */
+/* 共通 */
+a {
+    @apply hover:underline;
+}
+
 /* セクション間margin */
 main section {
     @apply my-12;
@@ -38,7 +43,7 @@ main section .content {
 
 /* 記事リンクリスト */
 .post-list li {
-    @apply block my-2;
+    @apply px-4 inline-block align-middle my-2;
 }
 .post-list li a {
     @apply text-lg hover:underline;

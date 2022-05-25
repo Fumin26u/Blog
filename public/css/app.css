@@ -620,10 +620,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .leading-7 {
   line-height: 1.75rem;
 }
-.text-green {
-  --tw-text-opacity: 1;
-  color: rgb(14 143 0 / var(--tw-text-opacity));
-}
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(27 17 13 / var(--tw-text-opacity));
@@ -665,6 +661,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     共通パーツ
 
 -------------------- */
+/* 共通 */
+a:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
 /* セクション間margin */
 main section {
   margin-top: 3rem;
@@ -714,7 +716,10 @@ main section .content {
 .post-list li {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  display: block;
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  vertical-align: middle;
 }
 .post-list li a {
   font-size: 1.125rem;
@@ -761,6 +766,11 @@ main section .content {
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.hover\:no-underline:hover {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 
 @media (prefers-color-scheme: dark) {

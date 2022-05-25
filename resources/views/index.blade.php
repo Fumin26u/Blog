@@ -11,7 +11,8 @@
     <div class="content">
         <p class="text">
             管理人が喋りたいと思ったことを喋るだけの所謂<b>雑記ブログ</b>です。<br>
-            それでもできるだけ有益な情報を提供するつもりです。多分。
+            それでもできるだけ有益な情報を提供するつもりです。多分。<br>
+            尚、このブログはLaravel(PHPフレームワーク)を用いたWordpress等CMSに頼っていない自作サイトです。
         </p>
         <dl class="desc-list">
             <p class="desc-title">主な投稿内容</p>
@@ -150,9 +151,11 @@
         </dl>
     </div>
 </section>
-<p class="text-green">Here is the Toppage of this blog!</p>
-<a href="./articles/index">記事一覧</a>
-<a href="./articles/create">記事投稿</a>
+
+@if(Auth::check())
+    <a href="./articles/index">記事一覧</a>
+    <a href="./articles/create">記事投稿</a>
+@endif
 </main>
 @endsection
 

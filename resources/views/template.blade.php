@@ -3,7 +3,7 @@
 <head>
 @include('templates.meta')
 </head>
-<body>
+<body class="h-full font-meiryo bg-white text-black">
 @include('templates.header')
 @yield('content')
 @include('templates.footer')

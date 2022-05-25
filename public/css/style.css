@@ -1,1 +1,38 @@
+/* Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* user custom settings */
+/* 共通パーツ */
+h1,h2,h3,h4 {
+    font-weight: bold;
+    /* color: #0E8F00; */
+}
+h1,h2 {
+    font-family: 'Yu Gothic Medium', 'YuGothicMedium', 'メイリオ', 'Meiryo', 'Arial';
+    /* letter-spacing: 2px; */
+}
+h1 {
+    font-size: 40px;
+    line-height: 40px;
+}
+h2 {
+    font-size: 36px;
+    line-height: 36px;
+}
+h3 {
+    font-size: 22px;
+}
+h4 {
+    font-size: 18px;
+}
 
+/* ヘッダー */
+header {
+    z-index: 99;
+    box-shadow: 0 3px 4px #110704;
+}
+/* メイン */
+main {
+    z-index: 0;
+}

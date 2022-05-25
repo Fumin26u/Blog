@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CatGenController;
+use App\Http\Controllers\RecentPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +21,7 @@ use App\Http\Controllers\CatGenController;
 //     return view('welcome');
 // });
 
-Route::get('/', function() {
-    return view('index');
-});
-Route::get('/index', function() {
-    return view('index');
-});
+Route::get('/', [RecentPostController::class, 'index'])->name('/');
 
 // laravel8ではControllerのクラスをuseする必要あり
 Route::prefix('articles/')->middleware('auth')->group(function () {

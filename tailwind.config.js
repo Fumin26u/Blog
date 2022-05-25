@@ -7,13 +7,13 @@ module.exports = {
     theme: {
         extend: {},
         fontFamily: {
-            'heading': ['Ostrich Sans', 'メイリオ', 'Meiryo', 'Arial'],
+            'heading': ['Ostrich Sans', 'Yu Gothic Medium', 'YuGothicMedium', 'メイリオ', 'Meiryo', 'Arial'],
             'meiryo': ['メイリオ', 'Meiryo', 'Arial']
         },
         colors: {
             white: {
-                light: '#FFFFFF',
-                DEFAULT: '#F5F5F5',
+                DEFAULT: '#FFFFFF',
+                dark: '#F5F5F5',
             },
             red: {
                 DEFAULT: '#E02D00',

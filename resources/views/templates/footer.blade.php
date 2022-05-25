@@ -1,19 +1,19 @@
 <footer class="h-full py-3 bg-black-dark text-white box-border">
     <div class="footer-content flex justify-between items-center max-w-7xl mx-auto">
-        <section class="footer-title font-heading w-1/5">
+        <section class="footer-title font-heading w-1/6">
             <a href="{{ url('/') }}" class="hover:no-underline">
                 <p class="blog-name text-5xl">Fu-minBlog</p>
                 <p class="blog-desc text-xs">趣味を呟く雑記ブログ</p>
             </a>
         </section>
-        <nav class="footer-nav w-2/5 text-center mx-auto">
+        <nav class="footer-nav w-2/4 text-center mx-auto">
             <ul class="flex justify-around">
                 @foreach($global_nav as $gn)
                     <li id="gnav-cats" class="text-lg px-3 mx-3">
                         <a href="{{ asset('/search?word=' . $gn['cat_slag']) }}" class="py-2 block hover:underline">
                             <p>{{ $gn['cat_name'] }}</p>
                         </a>
-                        <ul id="gnav-gens" class="hidden">
+                        <ul id="gnav-gens" class="text-sm">
                             @foreach($gn['genres'] as $ge)
                                 <li>
                                     <a href="{{ asset('/search?word=' . $ge['gen_slag']) }}">
@@ -26,7 +26,7 @@
                 @endforeach
             </ul>
         </nav>
-        <section class="search-box w-2/5 text-right">
+        <section class="search-box w-1/3 text-right">
             <form action="{{ asset('/search') }}" method="GET">
                 @csrf
                 <input

@@ -1,9 +1,9 @@
-<header class="h-full py-3 bg-brown text-white box-border shadow-lg">
+<header class="h-full py-3 bg-brown text-white box-border">
 <div class="header-content flex justify-between items-center max-w-7xl mx-auto">
     <section class="header-title font-heading w-1/5">
         <a href="{{ url('/') }}" class="hover:no-underline">
             <p class="blog-name text-5xl">Fu-minBlog</p>
-            <p class="blog-desc text-xs">ブログの説明欄</p>
+            <p class="blog-desc text-xs">趣味を呟く雑記ブログ</p>
         </a>
     </section>
     <nav class="header-nav w-2/5 text-center mx-auto">
@@ -36,7 +36,7 @@
                 value="@if(isset($_GET['header-search'])) {{$_GET['header-search']}} @endif"
                 placeholder=" 記事を検索"
             >
-            <input type="submit" value="検索" class="px-3 py-1.5 border-2 border-solid border-white">
+            <input class="btn-submit" type="submit" value="検索" class="px-3 py-1.5 border-2 border-solid border-white transition-all duration-200 hover:text-brown hover:bg-white">
         </form>
     </section>
 </div>

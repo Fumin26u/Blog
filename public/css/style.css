@@ -27,3 +27,12 @@ h4 {
     font-size: 18px;
 }
 
+/* ヘッダー */
+header {
+    z-index: 99;
+    box-shadow: 0 3px 5px #110704;
+}
+/* メイン */
+main {
+    z-index: 0;
+}

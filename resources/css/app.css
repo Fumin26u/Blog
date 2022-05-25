@@ -1,4 +1,70 @@
-/* tailwind css */
+/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* --------------------
+
+    共通パーツ
+
+-------------------- */
+/* セクション間margin */
+main section {
+    @apply my-12;
+}
+
+/* 見出しと内容間margin */
+main section .content {
+    @apply my-4;
+}
+
+/* dldtddリスト */
+.desc-list {
+    /* @apply mt-4; */
+}
+.desc-list .desc-title {
+    @apply my-4 text-lg text-green;
+}
+
+.desc-list div {
+    @apply mb-6 border-b border-gray border-solid;
+}
+.desc-list dt {
+    @apply inline-block align-middle text-right font-bold w-1/6;
+}
+.desc-list dd {
+    @apply inline-block align-middle w-3/4;
+}
+
+/* 記事リンクリスト */
+.post-list li {
+    @apply block my-2;
+}
+.post-list li a {
+    @apply text-lg hover:underline;
+}
+
+/* --------------------
+
+    トップページ
+
+-------------------- */
+/* セクション毎コンテンツ */
+.toppage section {
+    @apply flex justify-between;
+}
+.toppage section .title-area {
+    @apply w-1/5;
+}
+.toppage section .content {
+    @apply w-4/5 mt-8 mb-4;
+}
+
+/* セクション見出し */
+.toppage .title-area .title {
+    @apply border-b-2 border-green border-solid inline-block;
+}
+
+.toppage .title-area .title-jp {
+    @apply text-lg
+}

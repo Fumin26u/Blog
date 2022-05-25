@@ -6,11 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Post;
-use App\Models\Post_Tag;
-use App\Models\Cat_Gen;
-use App\Models\Category;
-use App\Models\Genre;
-use App\Models\Tag;
 
 class ArticleController extends Controller
 {

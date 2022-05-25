@@ -24,6 +24,11 @@ module.exports = {
             brown: {
                 DEFAULT: '#32160B',
             },
+            gray: {
+                light: '#E5E5E5',
+                DEFAULT: '#CCCCCC',
+                dark: '#888888'
+            },
             black: {
                 DEFAULT: '#1B110D',
                 dark: '#000000'

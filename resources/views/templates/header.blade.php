@@ -1,15 +1,15 @@
 <header class="h-full py-3 bg-brown text-white box-border shadow-lg">
 <div class="header-content flex justify-between items-center max-w-7xl mx-auto">
-    <section class="header-title font-heading w-1/6">
+    <section class="header-title font-heading w-1/5">
         <a href="{{ url('/') }}">
             <p class="blog-name text-5xl">Fu-minBlog</p>
             <p class="blog-desc text-xs">ブログの説明欄</p>
         </a>
     </section>
-    <nav class="header-nav w-2/4 text-center">
+    <nav class="header-nav w-2/5 text-center mx-auto">
         <ul class="flex justify-around">
             @foreach($global_nav as $gn)
-                <li id="gnav-cats" class="text-lg w-1/4 px-2">
+                <li id="gnav-cats" class="text-lg px-3 mx-3">
                     <a href="{{ asset('/search?word=' . $gn['cat_slag']) }}" class="py-2 block hover:underline">
                         <p>{{ $gn['cat_name'] }}</p>
                     </a>
@@ -26,7 +26,7 @@
             @endforeach
         </ul>
     </nav>
-    <section class="search-box w-1/3 text-right">
+    <section class="search-box w-2/5 text-right">
         <form action="{{ asset('/search') }}" method="GET">
             @csrf
             <input

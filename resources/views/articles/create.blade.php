@@ -6,7 +6,7 @@
 <p>only developers can access this site!</p>
 </main>
 <a href="./index">index</a>
-<form action="./store" method="POST">
+<form action="./store" method="POST" enctype="multipart/form-data">
     @csrf
     <dl class="post_form">
         <div>
@@ -36,6 +36,10 @@
                     @endforeach
                 </select>
             </dd>
+        </div>
+        <div>
+            <dt>OGP画像</dt>
+            <input type="file" name="ogp">
         </div>
         <div>
             <dt>公開設定</dt>

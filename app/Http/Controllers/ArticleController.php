@@ -69,6 +69,11 @@ class ArticleController extends Controller
         ->get();
         $gen_id = $gi[0]->gen_id;
 
+        // ogp画像をアップロードした場合、public/images/ogp内に保存
+        if (isset($request->ogp) && $request->ogp !== '') {
+            
+        }
+
         $post = new Post;
 
         $post->post_slag = $request->input('slag');

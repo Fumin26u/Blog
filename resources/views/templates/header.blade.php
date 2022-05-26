@@ -10,13 +10,13 @@
         <ul class="flex justify-around">
             @foreach($global_nav as $gn)
                 <li id="gnav-cats" class="text-lg px-3 mx-3">
-                    <a href="{{ asset('/search/index?word=' . $gn['cat_slag']) }}" class="py-2 block hover:underline">
+                    <a href="{{ asset('/search/index?category=' . $gn['cat_slag']) }}" class="py-2 block hover:underline">
                         <p>{{ $gn['cat_name'] }}</p>
                     </a>
                     <ul id="gnav-gens" class="hidden">
                         @foreach($gn['genres'] as $ge)
                             <li>
-                                <a href="{{ asset('/search/index?word=' . $ge['gen_slag']) }}">
+                                <a href="{{ asset('/search/index?genre=' . $ge['gen_slag']) }}">
                                     <p>{{ $ge['gen_name'] }}</p>
                                 </a>
                             </li>
@@ -32,8 +32,8 @@
             <input
                 class="p-2 text-left text-black outline-none"
                 type="search"
-                name="word"
-                value="@if(isset($_GET['word'])) {{$_GET['word']}} @endif"
+                name="search"
+                value="@if(isset($_GET['search'])) {{$_GET['search']}} @endif"
                 placeholder=" 記事を検索"
             >
             <input type="submit" value="検索" class="btn-submit border-white hover:text-brown hover:bg-white">

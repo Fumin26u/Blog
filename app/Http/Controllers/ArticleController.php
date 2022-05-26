@@ -83,7 +83,7 @@ class ArticleController extends Controller
         $post->post_title = $request->input('title');
         $post->post_author = 'fumiya';
         // Descriptionは、inputで登録しなかった場合記事内容の最初120文字とする
-        $post->post_desc = isset($request->description) && $request->input('description') !== '' ? $request->input('description') : substr($request->input('content'), 0, 115) . '...';
+        $post->post_desc = isset($request->description) && $request->input('description') !== '' ? $request->input('description') : mb_substr($request->input('content'), 0, 115) . '...';
         $post->post_content = $request->input('content');
         $post->post_stats = $request->input('stats');
         $post->ogp = is_null($img_path) || $img_path === '' ? 'images/ogp/noimage.png' : $img_path;
@@ -156,9 +156,11 @@ class ArticleController extends Controller
         $post->gen_id = $gen_id;
         $post->post_title = $request->input('title');
         $post->post_author = 'fumiya';
+        // Descriptionは、inputで登録しなかった場合記事内容の最初120文字とする
+        $post->post_desc = isset($request->description) && $request->input('description') !== '' ? $request->input('description') : mb_substr($request->input('content'), 0, 115) . '...';
         $post->post_content = $request->input('content');
         $post->post_stats = $request->input('stats');
-        $post->ogp = is_null($img_path) || $img_path === '' ? NULL : $img_path;
+        $post->ogp = is_null($img_path) || $img_path === '' ? 'images/ogp/noimage.png' : $img_path;
         $post->watch_count = 0;
 
         $post->save();

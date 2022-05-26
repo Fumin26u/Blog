@@ -12,7 +12,7 @@
         <ul class="post-list">
             @foreach ($posts as $post)
             <li>
-                <a href="{{ asset('show/' . $post->post_id) }}" style="color: #2563EB">
+                <a href="{{ asset('show/' . $post->post_id) }}">
                     <div class="img-area">
                         <img src="{{ Storage::url($post->ogp) }}" alt="">
                     </div>

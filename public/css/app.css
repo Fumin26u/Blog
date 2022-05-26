@@ -721,8 +721,8 @@ main section .content {
   color: rgb(27 17 13 / var(--tw-text-opacity));
 }
 .post-list li a {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   display: block;
   display: flex;
   width: 100%;
@@ -740,11 +740,17 @@ main section .content {
 }
 
 .post-list li .img-area {
-  width: 40%;
+  width: 33.333333%;
 }
 .post-list li .text-area {
   position: relative;
-  width: 60%;
+  width: 58.333333%;
+  white-space: normal;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.post-list li .text-area > p {
+  margin-top: 0.5rem;
 }
 .post-list li .text-area .post-time {
   position: absolute;

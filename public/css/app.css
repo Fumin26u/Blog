@@ -527,6 +527,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-t {
   border-top-width: 1px;
 }
+.border-brown {
+  --tw-border-opacity: 1;
+  border-color: rgb(50 22 11 / var(--tw-border-opacity));
+}
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -559,6 +563,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .py-3 {
   padding-top: 0.75rem;
@@ -660,8 +668,30 @@ a:hover {
           text-decoration-line: underline;
 }
 
+input, select {
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(27 17 13 / var(--tw-border-opacity));
+  padding: 0.25rem;
+}
+
+input[type="file"] {
+  border-width: 0px;
+}
+
 input[type="submit"] {
   cursor: pointer;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 64rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 /* セクション間margin */
@@ -720,7 +750,7 @@ main section .content {
   --tw-text-opacity: 1;
   color: rgb(27 17 13 / var(--tw-text-opacity));
 }
-.post-list li a {
+.post-list li > a, .post-list .no-link {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   display: block;
@@ -734,7 +764,7 @@ main section .content {
   border-color: rgb(27 17 13 / var(--tw-border-opacity));
   padding: 0.5rem;
 }
-.post-list li a:hover {
+.post-list li > a:hover, .post-list .no-link:hover {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
 }
@@ -752,12 +782,28 @@ main section .content {
 .post-list li .text-area > p {
   margin-top: 0.5rem;
 }
+.post-list li .text-area > h3 {
+  --tw-text-opacity: 1;
+  color: rgb(14 143 0 / var(--tw-text-opacity));
+}
 .post-list li .text-area .post-time {
   position: absolute;
   right: -0.125rem;
   bottom: -0.125rem;
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+/* シンプルリンクリスト */
+.link-area {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.link-area a {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(224 45 0 / var(--tw-text-opacity));
 }
 
 /* submitボタン */
@@ -806,38 +852,73 @@ main section .content {
   line-height: 1.75rem;
 }
 
+/* --------------------
+
+    共通パーツ
+
+-------------------- */
+/* 記事投稿ページ */
+.post-form > div {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(14 143 0 / var(--tw-border-opacity));
+  padding-bottom: 1rem;
+}
+.post-form div dt {
+  width: 8.333333%;
+}
+.post-form div dd {
+  width: 83.333333%;
+}
+
+.post-form .post-content {
+  display: block;
+}
+.post-form .post-content dt {
+  width: 100%;
+}
+.post-form .post-content dd {
+  width: 100%;
+}
+.hover\:bg-brown:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 22 11 / var(--tw-bg-opacity));
+}
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(27 17 13 / var(--tw-text-opacity));
 }
-
 .hover\:text-brown:hover {
   --tw-text-opacity: 1;
   color: rgb(50 22 11 / var(--tw-text-opacity));
 }
-
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-
 .hover\:no-underline:hover {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
 }
-
 @media (prefers-color-scheme: dark) {
   .dark\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
-
 @media (min-width: 640px) {
   .sm\:ml-0 {
     margin-left: 0px;
@@ -874,7 +955,6 @@ main section .content {
     text-align: right;
   }
 }
-
 @media (min-width: 768px) {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -886,7 +966,6 @@ main section .content {
     border-left-width: 1px;
   }
 }
-
 @media (min-width: 1024px) {
   .lg\:px-8 {
     padding-left: 2rem;

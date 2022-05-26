@@ -2,13 +2,13 @@
 
 @section('content')
 <main>
-<h1>test</h1>
-<p>only developers can access this site!</p>
-</main>
-<a href="./index">index</a>
+<div class="link-area">
+    <a href="./index">記事一覧</a>
+    <a href="../">トップページ</a>
+</div>
 <form action="./store" method="POST" enctype="multipart/form-data">
     @csrf
-    <dl class="post_form">
+    <dl class="post-form">
         <div>
             <dt>スラッグ</dt>
             <dd>
@@ -27,10 +27,10 @@
                 <input type="text" name="description" value="@if(isset($post)) {{ $post->post_title }} @endif" maxlength="120">
             </dd>
         </div>
-        <div>
+        <div class="post-content">
             <dt>内容</dt>
             <dd>
-                <textarea name="content" id="ckeditor" value="">@if(isset($post)) {{ $post->post_content }} @endif</textarea>
+                <textarea name="content" id="ckeditor">@if(isset($post)) {{ $post->post_content }} @endif</textarea>
             </dd>
         </div>
         <div>
@@ -45,7 +45,7 @@
         </div>
         <div>
             <dt>OGP画像</dt>
-            <input type="file" name="ogp">
+            <dd><input type="file" name="ogp"></dd>
         </div>
         <div>
             <dt>公開設定</dt>
@@ -58,8 +58,9 @@
             </dd>
         </div>
     </dl>
-    <input type="submit" value="登録">
+    <input type="submit" class="px-4 btn-submit border-brown hover:bg-brown hover:text-white" value="登録">
 </form>
+</main>
 @endsection
 
 @section('script')

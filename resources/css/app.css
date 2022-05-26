@@ -13,8 +13,20 @@ a {
     @apply hover:underline cursor-pointer;
 }
 
+input, select {
+    @apply p-1 border border-solid border-black;
+}
+
+input[type="file"] {
+    @apply border-0;
+}
+
 input[type="submit"] {
     @apply cursor-pointer;
+}
+
+main {
+    @apply bg-white max-w-5xl mx-auto my-6;
 }
 
 /* セクション間margin */
@@ -49,7 +61,8 @@ main section .content {
 .post-list li {
     @apply px-4 inline-block align-middle my-2 text-black;
 }
-.post-list li a {
+.post-list li > a,
+.post-list .no-link {
     @apply hover:no-underline p-2 my-2 flex justify-between block w-full border border-solid border-black rounded-lg;
 }
 
@@ -62,8 +75,19 @@ main section .content {
 .post-list li .text-area > p {
     @apply mt-2;
 }
+.post-list li .text-area > h3 {
+    @apply text-green;
+}
 .post-list li .text-area .post-time {
     @apply text-xs absolute -right-0.5 -bottom-0.5;
+}
+
+/* シンプルリンクリスト */
+.link-area {
+    @apply my-2;
+}
+.link-area a {
+    @apply text-lg text-red;
 }
 
 /* submitボタン */
@@ -93,5 +117,31 @@ main section .content {
 }
 
 .toppage .title-area .title-jp {
-    @apply text-lg
+    @apply text-lg;
+}
+
+/* --------------------
+
+    共通パーツ
+
+-------------------- */
+/* 記事投稿ページ */
+.post-form > div {
+    @apply my-4 pb-4 border-b border-green flex justify-between items-center ;
+}
+.post-form div dt {
+    @apply w-1/12;
+}
+.post-form div dd {
+    @apply w-10/12;
+}
+
+.post-form .post-content {
+    @apply block;
+}
+.post-form .post-content dt {
+    @apply w-full;
+}
+.post-form .post-content dd {
+    @apply w-full;
 }

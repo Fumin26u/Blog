@@ -22,7 +22,7 @@ class ArticleController extends Controller
 
         // Query Builder
         $articles = DB::table('posts')
-        ->select('post_id', 'post_slag', 'post_title', 'post_content', 'created_at', 'updated_at')
+        ->select('post_id', 'post_slag', 'post_title', 'post_desc', 'post_content', 'ogp', 'created_at', 'updated_at')
         ->get();
 
         // dd($articles);

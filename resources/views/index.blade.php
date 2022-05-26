@@ -163,8 +163,10 @@
 </section>
 
 @if(Auth::check())
+<div class="link-area">
     <a href="./articles/index">記事一覧</a>
     <a href="./articles/create">記事投稿</a>
+</div>
 @endif
 </main>
 @endsection

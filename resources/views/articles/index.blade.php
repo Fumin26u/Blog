@@ -2,17 +2,38 @@
 
 @section('content')
 <main>
-<h1>test</h1>
-<p>Here is one of the Article of this blog!</p>
-<a href="./create">新規登録</a>
-@foreach ($articles as $article)
-<div class="article" style="margin: 2em auto">
-    <p>{{ $article->post_title }}</p>
-    <p>{{ $article->created_at }}</p>
-    <a href="{{ '../show/' . $article->post_id }}">表示</a>
-    <a href="{{ 'edit/' . $article->post_id }}">編集</a>
+<div class="link-area">
+    <a href="./create">新規登録</a>
+    <a href="../">トップページ</a>
 </div>
-@endforeach
+<section class="about">
+    <div class="title-area">
+        <h2 class="title">投稿記事一覧</h2>
+    </div>
+    <div class="content">
+        <ul class="post-list">
+            @foreach ($articles as $article)
+            <li class="no-link">
+                <div class="img-area">
+                    <img src="{{ Storage::url($article->ogp) }}" alt="">
+                </div>
+                <div class="text-area">
+                    <h3>{{ $article->post_title }}</h3>
+                    <p>{{ $article->post_desc }}</p>
+                    <div class="link-area">
+                        <a href="{{ asset('show/' . $article->post_id) }}">記事を表示</a>
+                        <a href="{{ asset('articles/edit/' . $article->post_id) }}">記事を編集</a>
+                    </div>
+                    <div class="post-time">
+                        <p>投稿日: {{ $article->created_at }}</p>
+                        <p>更新日: {{ $article->updated_at }}</p>
+                    </div>
+                </div>
+            </li>
+            @endforeach
+        </ul>
+    </div>
+</section>
 </main>
 @endsection
 

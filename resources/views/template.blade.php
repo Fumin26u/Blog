@@ -7,6 +7,7 @@
 @include('templates.header')
 @yield('content')
 @include('templates.footer')
+<div class="copyright bg-black-dark text-white text-center">&copy;2022 Fu-minblog</div>
 @yield('script')
 </body>
 </html>

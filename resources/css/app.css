@@ -47,10 +47,23 @@ main section .content {
 
 /* 記事リンクリスト */
 .post-list li {
-    @apply px-4 inline-block align-middle my-2;
+    @apply px-4 inline-block align-middle my-2 text-black;
 }
 .post-list li a {
-    @apply text-lg hover:underline;
+    @apply hover:no-underline p-2 my-2 flex justify-between block w-full border border-solid border-black rounded-lg;
+}
+
+.post-list li .img-area {
+    @apply w-4/12;
+}
+.post-list li .text-area {
+    @apply w-7/12 text-sm relative whitespace-normal;
+}
+.post-list li .text-area > p {
+    @apply mt-2;
+}
+.post-list li .text-area .post-time {
+    @apply text-xs absolute -right-0.5 -bottom-0.5;
 }
 
 /* submitボタン */

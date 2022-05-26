@@ -1,5 +1,10 @@
 @extends('template')
-
+@section('others_head')
+    <meta property="og:image" content="{{ Storage::url($post->ogp) }}">
+    @if (!is_null($post->post_desc))
+    <meta property="og:description" content="{{ $post->post_desc }}">
+    @endif
+@endsection
 @section('content')
 <main>
 <h1>{{ $post->post_title }}</h1>

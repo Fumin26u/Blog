@@ -6,7 +6,7 @@
 <p>only developers can access this site!</p>
 </main>
 <a href="./index">index</a>
-<form action="./store" method="POST">
+<form action="./store" method="POST" enctype="multipart/form-data">
     @csrf
     <dl class="post_form">
         <div>
@@ -19,6 +19,12 @@
             <dt>タイトル</dt>
             <dd>
                 <input type="text" name="title" value="@if(isset($post)) {{ $post->post_title }} @endif" maxlength="255">
+            </dd>
+        </div>
+        <div>
+            <dt>説明欄</dt>
+            <dd>
+                <input type="text" name="description" value="@if(isset($post)) {{ $post->post_title }} @endif" maxlength="120">
             </dd>
         </div>
         <div>
@@ -36,6 +42,10 @@
                     @endforeach
                 </select>
             </dd>
+        </div>
+        <div>
+            <dt>OGP画像</dt>
+            <input type="file" name="ogp">
         </div>
         <div>
             <dt>公開設定</dt>

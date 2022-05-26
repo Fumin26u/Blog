@@ -20,6 +20,8 @@ class SearchArticlesController extends Controller
             $req_value = array_values($request->query())[1];
         }
 
+        $search_words = '';
+
         if ($req_key === 'category') {
 
             $posts = DB::table('posts')
@@ -29,13 +31,25 @@ class SearchArticlesController extends Controller
                 ->where('categories.cat_slag', '=', $req_value)
                 ->get();
 
+            $sw = DB::table('categories')
+                ->select('cat_name')
+                ->where('cat_slag', '=', $req_value)
+                ->get();
+            $search_words = $sw[0]->cat_name;
+
         } else if ($req_key === 'genre') {
 
             $posts = DB::table('posts')
                 ->join('genres', 'posts.gen_id', '=', 'genres.gen_id')
                 ->select('post_id', 'post_slag', 'post_title', 'post_desc', 'ogp', 'created_at', 'updated_at')
-                ->where('genres.gen_id', '=', $req_value)
+                ->where('genres.gen_slag', '=', $req_value)
                 ->get();
+
+            $sw = DB::table('genres')
+                ->select('gen_name')
+                ->where('gen_slag', '=', $req_value)
+                ->get();
+            $search_words = $sw[0]->gen_name;
 
         } else if ($req_key === 'search') {
 
@@ -44,10 +58,11 @@ class SearchArticlesController extends Controller
             ->where('post_content', 'like', '%' . $req_value . '%')
             ->get();
 
+            $search_words = $req_value;
+
         }
 
-
-        dd($posts);
-        return view('search/index', compact('posts'));
+        // dd($posts);
+        return view('search/index', compact('posts', 'search_words'));
     }
 }

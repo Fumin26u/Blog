@@ -26,7 +26,7 @@
             </div>
             <div>
                 <dt>ゲーム関連:</dt>
-                <dd>主に音ゲーやアイドルマスターのお話。好きは全力で語れ(?)</dd>
+                <dd>主に音ゲーやアイドルマスターのお話。</dd>
             </div>
             <div>
                 <dt>その他:</dt>
@@ -45,8 +45,18 @@
         <ul class="post-list">
             @foreach ($recentPosts as $post)
             <li>
-                <a href="{{ asset('show/' . $post->post_id) }}" style="color: #2563EB">
-                    <p>{{ $post->post_title }}</p>
+                <a href="{{ asset('show/' . $post->post_id) }}" class="text-black">
+                    <div class="img-area">
+                        <img src="{{ Storage::url($post->ogp) }}" class="text-black">
+                    </div>
+                    <div class="text-area">
+                        <h3>{{ $post->post_title }}</h3>
+                        <p>{{ $post->post_desc }}</p>
+                        <div class="post-time">
+                            <p>投稿日: {{ $post->created_at }}</p>
+                            <p>更新日: {{ $post->updated_at }}</p>
+                        </div>
+                    </div>
                 </a>
             </li>
             @endforeach

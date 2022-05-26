@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CatGenController;
 use App\Http\Controllers\RecentPostController;
+use App\Http\Controllers\SearchArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,14 @@ use App\Http\Controllers\RecentPostController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// Authorization
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// トップページ
 Route::get('/', [RecentPostController::class, 'index'])->name('/');
 
+// 記事投稿関連
 // laravel8ではControllerのクラスをuseする必要あり
 Route::prefix('articles/')->middleware('auth')->group(function () {
     // 記事編集関連
@@ -43,6 +46,9 @@ Route::prefix('articles/')->middleware('auth')->group(function () {
 // 記事表示関連
 Route::get('show/{id}', [ArticleController::class, 'show'])->name('show');
 
+// 記事検索関連
+Route::get('search/index', [SearchArticlesController::class, 'index'])->name('search/index');
+
 // ckeditorの画像アップロード用
 Route::post('ckeditor/images', 'UploadImageController@upload')->name('ckeditor/images');
 
@@ -57,6 +63,4 @@ Route::prefix('cg/')->middleware('auth')->group(function () {
     Route::post('destroy/{id}', [CatGenController::class, 'destroy'])->name('cg/destroy');
 });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

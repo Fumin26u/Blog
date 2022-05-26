@@ -22,6 +22,12 @@
             </dd>
         </div>
         <div>
+            <dt>説明欄</dt>
+            <dd>
+                <input type="text" name="description" value="@if(isset($post)) {{ $post->post_title }} @endif" maxlength="120">
+            </dd>
+        </div>
+        <div>
             <dt>内容</dt>
             <dd>
                 <textarea name="content" id="ckeditor" value="">@if(isset($post)) {{ $post->post_content }} @endif</textarea>

@@ -19,8 +19,10 @@ class CreatePostTable extends Migration
             $table->unsignedBigInteger('gen_id');
             $table->string('post_title', 255);
             $table->string('post_author', 20);
+            $table->string('post_desc', 120)->nullable();
             $table->text('post_content')->nullable();
             $table->string('post_stats', 10)->default('pending');
+            $table->string('ogp', 255)->nullable();
             $table->integer('watch_count');
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();

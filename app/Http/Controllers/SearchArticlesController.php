@@ -29,6 +29,8 @@ class SearchArticlesController extends Controller
                 ->join('categories', 'cat_gen.cat_id', '=', 'categories.cat_id')
                 ->select('post_id', 'post_slag', 'post_title', 'post_desc', 'ogp', 'created_at', 'updated_at')
                 ->where('categories.cat_slag', '=', $req_value)
+                ->where('post_stats', 'public')
+                ->orderBy('created_at', 'desc')
                 ->get();
 
             $sw = DB::table('categories')
@@ -43,6 +45,8 @@ class SearchArticlesController extends Controller
                 ->join('genres', 'posts.gen_id', '=', 'genres.gen_id')
                 ->select('post_id', 'post_slag', 'post_title', 'post_desc', 'ogp', 'created_at', 'updated_at')
                 ->where('genres.gen_slag', '=', $req_value)
+                ->where('post_stats', 'public')
+                ->orderBy('created_at', 'desc')
                 ->get();
 
             $sw = DB::table('genres')
@@ -54,9 +58,11 @@ class SearchArticlesController extends Controller
         } else if ($req_key === 'search') {
 
             $posts = DB::table('posts')
-            ->select('post_id', 'post_slag', 'post_title', 'post_desc', 'ogp', 'created_at', 'updated_at')
-            ->where('post_content', 'like', '%' . $req_value . '%')
-            ->get();
+                ->select('post_id', 'post_slag', 'post_title', 'post_desc', 'ogp', 'created_at', 'updated_at')
+                ->where('post_content', 'like', '%' . $req_value . '%')
+                ->where('post_stats', 'public')
+                ->orderBy('created_at', 'desc')
+                ->get();
 
             $search_words = $req_value;
 

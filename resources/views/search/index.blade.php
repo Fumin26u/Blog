@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('content')
-<main class="search bg-white max-w-5xl mx-auto my-6">
+<main class="search">
 
 <section class="about">
     <div class="title-area">

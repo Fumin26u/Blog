@@ -3,7 +3,7 @@
     CKEDITOR.replace('ckeditor', {
         uiColor: '#EEEEEE',
         height: 300,
-        width: 1200,
+        width: 1024,
         // エディタ内に適用するCSS
         // contentsCss: [
         //     "./css/sample.css",

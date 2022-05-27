@@ -118,10 +118,6 @@
                 <dd>静岡県沼津市に生まれる。</dd>
             </div>
             <div>
-                <dt>2003年:</dt>
-                <dd>父親の影響でDance Dance Revolution(DDR)を始める。人生初のゲームがこれ。</dd>
-            </div>
-            <div>
                 <dt>2006年:</dt>
                 <dd>初めてPCに触る。確かDORAっていうよく分からん教育ゲームやってた。</dd>
             </div>
@@ -163,8 +159,10 @@
 </section>
 
 @if(Auth::check())
+<div class="link-area">
     <a href="./articles/index">記事一覧</a>
     <a href="./articles/create">記事投稿</a>
+</div>
 @endif
 </main>
 @endsection

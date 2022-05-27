@@ -19,7 +19,13 @@
     <div>{!! $post->post_content !!}</div>
 </section>
 
-<a href="../articles/create">記事の新規登録</a>
+@if(Auth::check())
+<div class="link-area">
+    <a href="../../">トップページ</a>
+    <a href="../../articles/index">記事一覧</a>
+    <a href="../../articles/create">記事投稿</a>
+</div>
+@endif
 </main>
 @endsection
 

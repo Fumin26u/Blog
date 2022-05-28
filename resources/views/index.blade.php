@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('content')
-<main class="toppage bg-white max-w-5xl mx-auto my-6">
+<main class="toppage">
 
 <section class="about">
     <div class="title-area">

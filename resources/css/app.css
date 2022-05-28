@@ -90,6 +90,27 @@ main section .content {
     @apply text-lg text-red;
 }
 
+/* 記事投稿ページ */
+.post-form > div {
+    @apply my-4 pb-4 border-b border-green flex justify-between items-center ;
+}
+.post-form div dt {
+    @apply w-1/12;
+}
+.post-form div dd {
+    @apply w-10/12;
+}
+
+.post-form .post-content {
+    @apply block;
+}
+.post-form .post-content dt {
+    @apply w-full;
+}
+.post-form .post-content dd {
+    @apply w-full;
+}
+
 /* submitボタン */
 .btn-submit {
     @apply px-3 py-1.5 border-2 border-solid transition-all duration-200;
@@ -122,26 +143,42 @@ main section .content {
 
 /* --------------------
 
-    共通パーツ
+    記事詳細ページ
 
 -------------------- */
-/* 記事投稿ページ */
-.post-form > div {
-    @apply my-4 pb-4 border-b border-green flex justify-between items-center ;
+.articles .top-title h1 {
+    @apply text-4xl pb-1 border-b-2 border-green border-solid;
 }
-.post-form div dt {
-    @apply w-1/12;
-}
-.post-form div dd {
-    @apply w-10/12;
+.articles .top-title .details {
+    @apply text-right text-xs pt-1;
 }
 
-.post-form .post-content {
-    @apply block;
+.articles .post-content {
+    @apply leading-loose;
 }
-.post-form .post-content dt {
-    @apply w-full;
+
+.articles .post-content h2 {
+    @apply align-middle text-2xl py-2 before:inline-block before:align-middle before:content-[''] before:mr-2 before:w-0.5 before:h-4 before:bg-green;
 }
-.post-form .post-content dd {
-    @apply w-full;
+.articles .post-content h3 {
+    @apply text-xl py-2;
 }
+.articles .post-content h4 {
+    @apply text-lg py-1;
+}
+
+.articles .post-content a {
+    @apply text-blue;
+}
+
+.articles .post-content ul,
+.articles .post-content ol {
+    @apply list-inside ml-2;
+}
+.articles .post-content ul {
+    @apply list-disc;
+}
+.articles .post-content ol {
+    @apply list-decimal;
+}
+

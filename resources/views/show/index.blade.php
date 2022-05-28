@@ -6,16 +6,15 @@
     @endif
 @endsection
 @section('content')
-<main>
-<h1>{{ $post->post_title }}</h1>
-
-<section class="detail_area">
-    <p class="author"><small>投稿者: {{ $post->post_author }}</small></p>
-    <p class="author"><small>作成日: {{ $post->created_at }}</small></p>
-    <p class="author"><small>更新日: {{ $post->updated_at }}</small></p>
+<main class="articles">
+<section class="top-title">
+    <h1>{{ $post->post_title }}</h1>
+    <div class="details">
+        <p>作成日: {{ $post->created_at }} / 更新日: {{ $post->updated_at }}</p>
+    </div>
 </section>
 
-<section class="post_content">
+<section class="post-content">
     <div>{!! $post->post_content !!}</div>
 </section>
 

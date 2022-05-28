@@ -402,10 +402,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
-.my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -496,9 +492,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-2\/5 {
   width: 40%;
-}
-.max-w-5xl {
-  max-width: 64rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -810,6 +803,35 @@ main section .content {
   color: rgb(224 45 0 / var(--tw-text-opacity));
 }
 
+/* 記事投稿ページ */
+.post-form > div {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(14 143 0 / var(--tw-border-opacity));
+  padding-bottom: 1rem;
+}
+.post-form div dt {
+  width: 8.333333%;
+}
+.post-form div dd {
+  width: 83.333333%;
+}
+
+.post-form .post-content {
+  display: block;
+}
+.post-form .post-content dt {
+  width: 100%;
+}
+.post-form .post-content dd {
+  width: 100%;
+}
+
 /* submitボタン */
 .btn-submit {
   border-width: 2px;
@@ -858,36 +880,75 @@ main section .content {
 
 /* --------------------
 
-    共通パーツ
+    記事詳細ページ
 
 -------------------- */
-/* 記事投稿ページ */
-.post-form > div {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom-width: 1px;
+.articles .top-title h1 {
+  border-bottom-width: 2px;
+  border-style: solid;
   --tw-border-opacity: 1;
   border-color: rgb(14 143 0 / var(--tw-border-opacity));
-  padding-bottom: 1rem;
+  padding-bottom: 0.25rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
-.post-form div dt {
-  width: 8.333333%;
-}
-.post-form div dd {
-  width: 83.333333%;
+.articles .top-title .details {
+  padding-top: 0.25rem;
+  text-align: right;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
-.post-form .post-content {
-  display: block;
+.articles .post-content {
+  line-height: 2;
 }
-.post-form .post-content dt {
-  width: 100%;
+
+.articles .post-content h2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
-.post-form .post-content dd {
-  width: 100%;
+
+.articles .post-content h2::before {
+  margin-right: 0.5rem;
+  display: inline-block;
+  height: 1rem;
+  width: 0.125rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 143 0 / var(--tw-bg-opacity));
+  vertical-align: middle;
+  --tw-content: '';
+  content: var(--tw-content);
+}
+.articles .post-content h3 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.articles .post-content h4 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.articles .post-content a {
+  --tw-text-opacity: 1;
+  color: rgb(0 114 143 / var(--tw-text-opacity));
+}
+
+.articles .post-content ul, .articles .post-content ol {
+  margin-left: 0.5rem;
+  list-style-position: inside;
+}
+.articles .post-content ul {
+  list-style-type: disc;
+}
+.articles .post-content ol {
+  list-style-type: decimal;
 }
 .hover\:bg-brown:hover {
   --tw-bg-opacity: 1;
@@ -976,4 +1037,5 @@ main section .content {
     padding-right: 2rem;
   }
 }
+
 

@@ -27,7 +27,7 @@
         <div>
             <dt>説明欄</dt>
             <dd>
-                <input type="text" name="description" value="@if(isset($post)) {{ $post->post_title }} @endif" maxlength="120">
+                <input type="text" name="description" value="@if(isset($post)) {{ $post->post_desc }} @endif" maxlength="120">
             </dd>
         </div>
         <div class="post-content">

@@ -1,4 +1,5 @@
 @extends('template')
+
 @section('others_head')
     <title>{{ $post->post_title }} | fu-minblog</title>
     <meta property="og:title" content="{{ $post->post_title }} | fu-minblog">
@@ -7,6 +8,7 @@
     <meta property="og:description" content="{{ $post->post_desc }}">
     @endif
 @endsection
+
 @section('content')
 <main class="articles">
 <section class="top-title">

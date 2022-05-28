@@ -5,13 +5,13 @@
 {{-- Load codesnippets style of CKEditor --}}
 <link href="{{ asset('ckeditor/plugins/codesnippet/lib/highlight/styles/default.css') }}" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142586151-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9553B5XZZK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-142586151-1');
+  gtag('config', 'G-9553B5XZZK');
 </script>
 <script src="{{ asset("ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js") }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>

@@ -51,7 +51,7 @@ Route::get('show/{id}', [ArticleController::class, 'show'])->name('show');
 Route::get('search/index', [SearchArticlesController::class, 'index'])->name('search/index');
 
 // サイトマップ関連
-Route::get('sitemap/', [SitemapController::class, 'index'])->name('sitemap/');
+// Route::get('sitemap/', [SitemapController::class, 'index'])->name('sitemap/');
 
 
 // ckeditorの画像アップロード用

@@ -689,6 +689,7 @@ main {
   max-width: 64rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  line-height: 2;
 }
 
 /* セクション間margin */
@@ -899,13 +900,9 @@ main section .content {
   line-height: 1rem;
 }
 
-.articles .post-content {
-  line-height: 2;
-}
-
 .articles .post-content h2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   vertical-align: middle;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -927,6 +924,8 @@ main section .content {
   padding-bottom: 0.5rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(14 143 0 / var(--tw-text-opacity));
 }
 .articles .post-content h4 {
   padding-top: 0.25rem;

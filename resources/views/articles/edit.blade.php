@@ -41,7 +41,7 @@
             <dd>
                 <select name="genre" id="post_genres">
                     @foreach ($genres as $genre)
-                    <option value="{{ $genre->gen_slag }}" @if(isset($post) && $post->gen_slag === $genre) selected @endif>{{ $genre->gen_name }}</option>
+                    <option value="{{ $genre->gen_slag }}" @if(isset($post) && $post->gen_id === $genre->gen_id) {{ 'selected' }} @endif>{{ $genre->gen_name }}</option>
                     @endforeach
                 </select>
             </dd>

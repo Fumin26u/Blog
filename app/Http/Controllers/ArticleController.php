@@ -148,7 +148,7 @@ class ArticleController extends Controller
             $img_path = $ogp->store('images/ogp', 'public');
         }
 
-        $post = new Post;
+        $post = Post::find($id);
 
         $post->post_slag = $request->input('slag');
         $post->gen_id = $gen_id;

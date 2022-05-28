@@ -26,7 +26,7 @@ input[type="submit"] {
 }
 
 main {
-    @apply bg-white max-w-5xl mx-auto my-6;
+    @apply bg-white max-w-5xl mx-auto my-6 leading-loose;
 }
 
 /* セクション間margin */
@@ -153,15 +153,11 @@ main section .content {
     @apply text-right text-xs pt-1;
 }
 
-.articles .post-content {
-    @apply leading-loose;
-}
-
 .articles .post-content h2 {
-    @apply align-middle text-2xl py-2 before:inline-block before:align-middle before:content-[''] before:mr-2 before:w-0.5 before:h-4 before:bg-green;
+    @apply align-middle text-2xl mt-8 mb-4 before:inline-block before:align-middle before:content-[''] before:mr-2 before:w-0.5 before:h-4 before:bg-green;
 }
 .articles .post-content h3 {
-    @apply text-xl py-2;
+    @apply text-xl py-2 text-green;
 }
 .articles .post-content h4 {
     @apply text-lg py-1;

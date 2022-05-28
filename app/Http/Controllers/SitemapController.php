@@ -19,7 +19,7 @@ class SitemapController extends Controller
         // URLの生成
         $posts = Post::query()->orderBy('updated_at', 'desc')->get();
         foreach ($posts as $post) {
-            $sitemap->add(route('show/', compact('post')), $post->updated_at, '0.8', 'monthly');
+            $sitemap->add(route(asset('show/'), compact('post')), $post->updated_at, '0.8', 'monthly');
         }
 
         return $sitemap->store('xml', 'public');

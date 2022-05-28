@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CatGenController;
 use App\Http\Controllers\RecentPostController;
 use App\Http\Controllers\SearchArticlesController;
+use App\Http\Controllers\SitemapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,10 @@ Route::get('show/{id}', [ArticleController::class, 'show'])->name('show');
 
 // 記事検索関連
 Route::get('search/index', [SearchArticlesController::class, 'index'])->name('search/index');
+
+// サイトマップ関連
+Route::get('sitemap/', [SitemapController::class, 'index'])->name('sitemap/');
+
 
 // ckeditorの画像アップロード用
 Route::post('ckeditor/images', 'UploadImageController@upload')->name('ckeditor/images');

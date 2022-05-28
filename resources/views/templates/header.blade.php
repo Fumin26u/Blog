@@ -1,5 +1,5 @@
-<header class="h-full py-3 bg-brown text-white box-border">
-<div class="header-content flex justify-between items-center max-w-7xl mx-auto">
+<header class="h-full bg-brown text-white box-border">
+<div class="header-content flex justify-between items-center max-w-7xl">
     <section class="header-title font-heading w-1/5">
         <a href="{{ url('/') }}" class="hover:no-underline">
             <p class="blog-name text-5xl">Fu-minBlog</p>
@@ -38,6 +38,16 @@
             >
             <input type="submit" value="検索" class="btn-submit border-white hover:text-brown hover:bg-white">
         </form>
+    </section>
+    <section id="hamburger" class="mx-3">
+        <div class="bar-area">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="content">
+
+        </div>
     </section>
 </div>
 </header>

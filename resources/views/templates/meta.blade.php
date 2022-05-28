@@ -4,6 +4,9 @@
 <link rel="icon" href="{{ asset("images/favicon.png") }}">
 {{-- Load codesnippets style of CKEditor --}}
 <link href="{{ asset('ckeditor/plugins/codesnippet/lib/highlight/styles/default.css') }}" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="fu-minblog">
+<meta url="{{ url()->current() }}">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9553B5XZZK"></script>
 <script>

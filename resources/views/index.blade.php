@@ -1,5 +1,11 @@
 @extends('template')
 
+@section('others_head')
+<title>fu-minblog | 趣味を呟く雑記ブログ</title>
+<meta property="og:title" content="fu-minblog | 趣味を呟く雑記ブログ">
+<meta property="og:description" content="fu-minblogは、プログラミング技術から旅行・ゲームなどの趣味の話、ふと思ったことまで、様々な経験を記事にしている雑記ブログです。できるだけ有益な情報を提供しております。">
+@endsection
+
 @section('content')
 <main class="toppage">
 

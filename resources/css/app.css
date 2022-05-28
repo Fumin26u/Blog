@@ -146,6 +146,10 @@ main section .content {
     記事詳細ページ
 
 -------------------- */
+.articles .top-title {
+    @apply mt-16 mb-8;
+}
+
 .articles .top-title h1 {
     @apply text-4xl pb-1 border-b-2 border-green border-solid;
 }

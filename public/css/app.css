@@ -884,6 +884,11 @@ main section .content {
     記事詳細ページ
 
 -------------------- */
+.articles .top-title {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
 .articles .top-title h1 {
   border-bottom-width: 2px;
   border-style: solid;

@@ -1,5 +1,7 @@
 @extends('template')
 @section('others_head')
+    <title>{{ $post->post_title }} | fu-minblog</title>
+    <meta property="og:title" content="{{ $post->post_title }} | fu-minblog">
     <meta property="og:image" content="{{ Storage::url($post->ogp) }}">
     @if (!is_null($post->post_desc))
     <meta property="og:description" content="{{ $post->post_desc }}">

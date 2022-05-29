@@ -1,7 +1,8 @@
 {
     // ハンバーガーメニュー
     const h = document.getElementById("hamburger");
-    h.addEventListener("click", () => {
+    const b = document.getElementById("bar-area");
+    b.addEventListener("click", () => {
         h.classList.toggle("on");
     });
 }

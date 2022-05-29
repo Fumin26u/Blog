@@ -499,6 +499,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-7xl {
   max-width: 80rem;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -527,6 +530,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(27 17 13 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -623,6 +630,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-green {
+  --tw-text-opacity: 1;
+  color: rgb(14 143 0 / var(--tw-text-opacity));
+}
+.text-blue {
+  --tw-text-opacity: 1;
+  color: rgb(0 114 143 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -848,6 +863,9 @@ main section .content {
 
 -------------------- */
 header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
@@ -933,12 +951,12 @@ header #hamburger.on .bar {
   margin-bottom: 0px;
 }
 header #hamburger.on .bar:first-child {
-  --tw-translate-y: 50%;
+  --tw-translate-y: 0.125rem;
   --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 header #hamburger.on .bar:last-child {
-  --tw-translate-y: -50%;
+  --tw-translate-y: -0.125rem;
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -946,6 +964,57 @@ header #hamburger.on .bar:nth-child(even) {
   opacity: 0;
 }
 
+header #hamburger .content {
+  position: fixed;
+  right: -100%;
+  z-index: 50;
+  width: 20rem;
+  overflow: visible;
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(27 17 13 / var(--tw-text-opacity));
+  opacity: 0;
+  transition-duration: 300ms;
+        top: 90px;
+}
+header #hamburger.on .content {
+  right: 0px;
+  display: block;
+  opacity: 1;
+}
+
+header #hamburger .content nav {
+  border-bottom-width: 1px;
+  border-style: solid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+header #hamburger .content nav:last-child {
+  border-width: 0px;
+}
+
+header #hamburger .content .link-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+header #hamburger .content .link-list li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  width: 50%;
+}
 
 /* --------------------
 
@@ -1062,6 +1131,10 @@ header #hamburger.on .bar:nth-child(even) {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.hover\:bg-black:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(27 17 13 / var(--tw-bg-opacity));
 }
 .hover\:text-white:hover {
   --tw-text-opacity: 1;

@@ -10,7 +10,7 @@
 @section('content')
 <main class="toppage">
 
-<section class="about">
+<section class="about" id="about">
     <div class="title-area">
         <h2 class="title">ABOUT</h2>
         <p class="title-jp">ブログ概要</p>
@@ -43,7 +43,7 @@
     </div>
 </section>
 
-<section class="recent">
+<section class="recent" id="recent">
     <div class="title-area">
         <h2 class="title">RECENT</h2>
         <p class="title-jp">最近の投稿</p>
@@ -71,7 +71,7 @@
     </div>
 </section>
 
-<section class="profile">
+<section class="profile" id="profile">
     <div class="title-area">
         <h2 class="title">PROFILE</h2>
         <p class="title-jp">管理人自己紹介</p>
@@ -112,7 +112,7 @@
     </div>
 </section>
 
-<section class="career">
+<section class="career" id="career">
     <div class="title-area">
         <h2 class="title">CAREER</h2>
         <p class="title-jp">管理人経歴</p>

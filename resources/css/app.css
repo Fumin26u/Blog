@@ -10,6 +10,9 @@
     .bottom-50p {
         bottom: 50%;
     }
+    .top-90p {
+        top: 90px;
+    }
 }
 
 /* --------------------
@@ -131,7 +134,7 @@ main section .content {
 
 -------------------- */
 header {
-    @apply py-3;
+    @apply py-3 sticky top-0;
 }
 
 header .header-content {
@@ -172,9 +175,26 @@ header #hamburger .bar {
     @apply block bg-white w-8 h-0.5 duration-300 my-2.5 mx-auto;
 }
 header #hamburger.on .bar {
-    @apply my-0 first:-rotate-45 first:translate-y-1/2 last:rotate-45 last:-translate-y-1/2 even:opacity-0;
+    @apply my-0 first:-rotate-45 first:translate-y-0.5 last:rotate-45 last:-translate-y-0.5 even:opacity-0;
 }
 
+header #hamburger .content {
+    @apply bg-white-dark text-black z-50 fixed opacity-0 w-80 px-2 py-2 duration-300 -right-full overflow-visible top-90p;
+}
+header #hamburger.on .content {
+    @apply block opacity-100 right-0;
+}
+
+header #hamburger .content nav {
+    @apply last:border-0 border-b border-solid py-4;
+}
+
+header #hamburger .content .link-list {
+    @apply flex flex-wrap justify-around text-center items-center font-bold text-lg;
+}
+header #hamburger .content .link-list li {
+    @apply w-1/2 block my-2;
+}
 
 /* --------------------
 

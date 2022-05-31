@@ -198,6 +198,38 @@ header #hamburger .content .link-list li {
 
 /* --------------------
 
+    フッター
+
+-------------------- */
+footer .footer-content > * {
+    @apply w-full;
+}
+footer .footer-content .footer-title {
+    @apply md:w-1/6 text-center my-4;
+}
+footer .footer-content .footer-nav {
+    @apply md:w-1/2;
+}
+footer .footer-content .search-box {
+    @apply md:w-1/3;
+}
+
+footer .footer-content .footer-nav > ul {
+    @apply flex-wrap;
+}
+footer .footer-content .footer-nav #gnav-cats {
+    @apply
+        w-full
+        md:w-1/4;
+}
+footer .footer-content .footer-nav #gnav-gens {
+    @apply
+        hidden
+        lg:block;
+}
+
+/* --------------------
+
     トップページ
 
 -------------------- */

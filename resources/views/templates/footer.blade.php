@@ -1,5 +1,5 @@
 <footer class="h-full py-8 bg-black-dark text-white box-border">
-    <div class="footer-content flex justify-between items-center max-w-7xl mx-auto">
+    <div class="footer-content flex justify-between items-center max-w-7xl mx-auto flex-wrap">
         <section class="footer-title font-heading w-1/6">
             <a href="{{ url('/') }}" class="hover:no-underline">
                 <p class="blog-name text-5xl">Fu-minBlog</p>
@@ -9,7 +9,7 @@
         <nav class="footer-nav w-2/4 text-center mx-auto">
             <ul class="flex justify-around">
                 @foreach($global_nav as $gn)
-                    <li id="gnav-cats" class="text-lg px-3 mx-3">
+                    <li id="gnav-cats" class="text-lg px-3">
                         <a href="{{ asset('/search/index?category=' . $gn['cat_slag']) }}" class="py-2 block hover:underline">
                             <p>{{ $gn['cat_name'] }}</p>
                         </a>

@@ -6,7 +6,7 @@
 <body class="h-full font-meiryo bg-white text-black">
 @include('templates.header')
 @yield('content')
-{{-- @include('templates.footer') --}}
+@include('templates.footer')
 <div class="copyright bg-black-dark text-white text-center">&copy;2022 Fu-minblog</div>
 @yield('script')
 <script src="{{ asset('js/script.js') }}"></script>

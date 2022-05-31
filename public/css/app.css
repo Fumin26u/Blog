@@ -402,10 +402,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
-.mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-}
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -487,20 +483,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-1\/3 {
   width: 33.333333%;
 }
-.w-1\/5 {
-  width: 20%;
-}
-.w-2\/5 {
-  width: 40%;
-}
 .max-w-6xl {
   max-width: 72rem;
 }
 .max-w-7xl {
   max-width: 80rem;
-}
-.cursor-pointer {
-  cursor: pointer;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -513,9 +500,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-center {
   justify-content: center;
-}
-.justify-between {
-  justify-content: space-between;
 }
 .justify-around {
   justify-content: space-around;
@@ -534,10 +518,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(27 17 13 / var(--tw-border-opacity));
-}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -545,10 +525,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-black-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-.bg-brown {
-  --tw-bg-opacity: 1;
-  background-color: rgb(50 22 11 / var(--tw-bg-opacity));
 }
 .p-6 {
   padding: 1.5rem;
@@ -869,13 +845,23 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+  box-sizing: border-box;
+  height: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 22 11 / var(--tw-bg-opacity));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 header .header-content {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  display: flex;
+  max-width: 80rem;
+  align-items: center;
+  justify-content: space-between;
 }
 @media (min-width: 1296px) {
     header .header-content {
@@ -886,6 +872,7 @@ header .header-content {
 
 header .header-title {
   width: 66.666667%;
+  font-family: Ostrich Sans, Yu Gothic Medium, YuGothicMedium, メイリオ, Meiryo, Arial;
 }
 
 @media (min-width: 1024px) {
@@ -899,37 +886,102 @@ header .header-title {
     width: 20%;
   }
 }
-header .header-nav {
-  display: none;
-  width: 50%;
+header .header-title a:hover {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
+header .header-title .blog-name {
+  font-size: 3rem;
+  line-height: 1;
+}
+header .header-title .blog-desc {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+header .header-nav {
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  text-align: center;
+}
+
 @media (min-width: 1024px) {
   header .header-nav {
     display: block;
   }
 }
+
 @media (min-width: 1280px) {
   header .header-nav {
     width: 50%;
   }
 }
+header .header-nav > ul {
+  display: flex;
+  justify-content: space-around;
+}
+header .header-nav #gnav-cats {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+header .header-nav #gnav-cats > a {
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+header .header-nav #gnav-cats > a:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+header .header-nav #gnav-gens {
+  display: none;
+}
+
 header .search-box {
   display: none;
   width: 33.333333%;
+  text-align: right;
 }
+
 @media (min-width: 1024px) {
   header .search-box {
     display: block;
   }
 }
+
 @media (min-width: 1280px) {
   header .search-box {
     width: 25%;
   }
 }
+header .search-box input[type="search"] {
+  padding: 0.5rem;
+  text-align: left;
+  --tw-text-opacity: 1;
+  color: rgb(27 17 13 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+header .search-box input[type="submit"] {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+header .search-box input[type="submit"]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(50 22 11 / var(--tw-text-opacity));
+}
 
 /* ハンバーガーメニュー */
 header #hamburger {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
   display: block;
 }
 @media (min-width: 1024px) {
@@ -1017,6 +1069,35 @@ header #hamburger .content .link-list li {
   margin-bottom: 0.5rem;
   display: block;
   width: 50%;
+}
+
+header #hamburger .hbg-search-box input[type="search"] {
+  padding: 0.5rem;
+  text-align: left;
+  --tw-text-opacity: 1;
+  color: rgb(27 17 13 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+header #hamburger .hbg-search-box input[type="submit"] {
+  margin-top: 1rem;
+  --tw-border-opacity: 1;
+  border-color: rgb(27 17 13 / var(--tw-border-opacity));
+  border-width: 2px;
+  border-style: solid;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+header #hamburger .hbg-search-box input[type="submit"]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(27 17 13 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 /* --------------------
@@ -1205,10 +1286,6 @@ footer .footer-content .footer-nav #gnav-gens {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.hover\:bg-black:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(27 17 13 / var(--tw-bg-opacity));
-}
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1216,10 +1293,6 @@ footer .footer-content .footer-nav #gnav-gens {
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(27 17 13 / var(--tw-text-opacity));
-}
-.hover\:text-brown:hover {
-  --tw-text-opacity: 1;
-  color: rgb(50 22 11 / var(--tw-text-opacity));
 }
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;

@@ -1,12 +1,12 @@
-<header class="h-full bg-brown text-white box-border">
-<div class="header-content flex justify-between items-center max-w-7xl">
-    <section class="header-title font-heading w-1/5">
-        <a href="{{ url('/') }}" class="hover:no-underline">
+<header>
+<div class="header-content h-full bg-brown text-white box-border py-3 sticky top-0">
+    <section class="header-title flex justify-between items-center max-w-7xl mx-2">
+        <a href="{{ url('/') }}" class="font-heading hover:no-underline">
             <p class="blog-name text-5xl">Fu-minBlog</p>
             <p class="blog-desc text-xs">趣味を呟く雑記ブログ</p>
         </a>
     </section>
-    <nav class="header-nav w-2/5 text-center mx-auto">
+    <nav class="header-nav text-center mx-auto">
         <ul class="flex justify-around">
             @foreach($global_nav as $gn)
                 <li id="gnav-cats" class="text-lg px-3 mx-3">
@@ -26,7 +26,7 @@
             @endforeach
         </ul>
     </nav>
-    <section class="search-box w-2/5 text-right">
+    <section class="search-box text-right">
         <form action="{{ asset('/search/index') }}" method="GET">
             @csrf
             <input
@@ -40,13 +40,13 @@
         </form>
     </section>
     <section id="hamburger" class="mx-3">
-        <div id="bar-area" class="cursor-pointer">
+        <div id="bar-area">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <div class="content">
-            <nav class="top-nav">
+        <div class="content bg-white-dark text-black px-2 py-2 duration-300 z-50 fixed overflow-visible top-90p">
+            <nav class="top-nav border-b border-solid py-4">
                 <p>トップページ</p>
                 <ul class="link-list text-green">
                     <li>
@@ -85,7 +85,7 @@
                         value="@if(isset($_GET['search'])) {{$_GET['search']}} @endif"
                         placeholder=" 記事を検索"
                     >
-                    <input type="submit" value="検索" class="mt-4 btn-submit border-black hover:text-white hover:bg-black">
+                    <input type="submit" value="検索" class="btn-submit mt-4 btn-submit border-black hover:text-white hover:bg-black">
                 </form>
             </div>
         </div>

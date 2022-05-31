@@ -732,6 +732,8 @@ main {
   max-width: 64rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   line-height: 2;
 }
 
@@ -748,9 +750,6 @@ main section .content {
 }
 
 /* dldtddリスト */
-.desc-list {
-    /* @apply mt-4; */
-}
 .desc-list .desc-title {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -762,34 +761,51 @@ main section .content {
 
 .desc-list div {
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   border-bottom-width: 1px;
   border-style: solid;
   --tw-border-opacity: 1;
   border-color: rgb(204 204 204 / var(--tw-border-opacity));
 }
 .desc-list dt {
-  display: inline-block;
-  width: 16.666667%;
-  text-align: right;
-  vertical-align: middle;
+  width: 100%;
   font-weight: 700;
 }
+@media (min-width: 768px) {
+  .desc-list dt {
+    width: 16.666667%;
+    text-align: right;
+  }
+}
 .desc-list dd {
-  display: inline-block;
-  width: 75%;
-  vertical-align: middle;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .desc-list dd {
+    width: 83.333333%;
+    padding-left: 1rem;
+  }
 }
 
 /* 記事リンクリスト */
 .post-list li {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 28rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  vertical-align: middle;
   --tw-text-opacity: 1;
   color: rgb(27 17 13 / var(--tw-text-opacity));
+}
+@media (min-width: 640px) {
+  .post-list li {
+    max-width: none;
+  }
 }
 .post-list li > a, .post-list .no-link {
   margin-top: 0.5rem;
@@ -797,42 +813,77 @@ main section .content {
   display: block;
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
   justify-content: space-between;
-  border-radius: 0.5rem;
-  border-width: 1px;
+  border-bottom-width: 1px;
   border-style: solid;
   --tw-border-opacity: 1;
-  border-color: rgb(27 17 13 / var(--tw-border-opacity));
-  padding: 0.5rem;
+  border-color: rgb(204 204 204 / var(--tw-border-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .post-list li > a:hover, .post-list .no-link:hover {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
 }
+@media (min-width: 640px) {
+  .post-list li > a, .post-list .no-link {
+    max-width: none;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(27 17 13 / var(--tw-border-opacity));
+    padding: 0.5rem;
+  }
+}
 
 .post-list li .img-area {
-  width: 33.333333%;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .post-list li .img-area {
+    width: 33.333333%;
+  }
 }
 .post-list li .text-area {
   position: relative;
-  width: 58.333333%;
+  width: 100%;
   white-space: normal;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.post-list li .text-area > p {
-  margin-top: 0.5rem;
+@media (min-width: 640px) {
+  .post-list li .text-area {
+    width: 66.666667%;
+    padding-left: 0.5rem;
+  }
 }
 .post-list li .text-area > h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   --tw-text-opacity: 1;
   color: rgb(14 143 0 / var(--tw-text-opacity));
 }
+@media (min-width: 640px) {
+  .post-list li .text-area > h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+.post-list li .text-area > p {
+  margin-top: 0.5rem;
+}
 .post-list li .text-area .post-time {
-  position: absolute;
-  right: -0.125rem;
-  bottom: -0.125rem;
   font-size: 0.75rem;
   line-height: 1rem;
+}
+@media (min-width: 640px) {
+  .post-list li .text-area .post-time {
+    position: absolute;
+    right: -0.125rem;
+    bottom: -0.125rem;
+  }
 }
 
 /* シンプルリンクリスト */
@@ -1092,15 +1143,25 @@ footer .footer-content .footer-nav #gnav-gens {
 /* セクション毎コンテンツ */
 .toppage section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
-.toppage section .title-area {
-  width: 20%;
+.toppage section > * {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .toppage section .title-area {
+    width: 20%;
+  }
 }
 .toppage section .content {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  width: 80%;
+}
+@media (min-width: 1024px) {
+  .toppage section .content {
+    width: 80%;
+  }
 }
 
 /* セクション見出し */

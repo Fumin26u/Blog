@@ -1,6 +1,6 @@
-<header>
-<div class="header-content h-full bg-brown text-white box-border py-3 sticky top-0">
-    <section class="header-title flex justify-between items-center max-w-7xl mx-2">
+<header class="bg-brown text-white h-full">
+<div class="header-content flex justify-between items-center max-w-7xl mx-2 box-border py-3 sticky top-0">
+    <section class="header-title">
         <a href="{{ url('/') }}" class="font-heading hover:no-underline">
             <p class="blog-name text-5xl">Fu-minBlog</p>
             <p class="blog-desc text-xs">趣味を呟く雑記ブログ</p>

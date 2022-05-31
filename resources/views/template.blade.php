@@ -9,5 +9,6 @@
 @include('templates.footer')
 <div class="copyright bg-black-dark text-white text-center">&copy;2022 Fu-minblog</div>
 @yield('script')
+<script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

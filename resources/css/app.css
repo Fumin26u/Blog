@@ -3,6 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .top-50p {
+        top: 50%;
+    }
+    .bottom-50p {
+        bottom: 50%;
+    }
+    .top-90p {
+        top: 90px;
+    }
+}
+
 /* --------------------
 
     共通パーツ
@@ -114,6 +126,105 @@ main section .content {
 /* submitボタン */
 .btn-submit {
     @apply px-3 py-1.5 border-2 border-solid transition-all duration-200;
+}
+
+/* --------------------
+
+    ヘッダー
+
+-------------------- */
+@media (min-width: 1296px) {
+    header .header-content {
+        @apply mx-auto;
+    }
+}
+
+header .header-title {
+    @apply
+        w-2/3
+        lg:w-1/6
+        xl:w-1/5;
+}
+header .header-nav {
+    @apply
+        hidden
+        lg:block
+        xl:w-1/2;
+}
+
+header .search-box {
+    @apply
+        hidden w-2/5
+        lg:block w-1/3
+        xl:w-1/4;
+}
+
+/* ハンバーガーメニュー */
+header #hamburger {
+    @apply
+        block
+        lg:hidden;
+}
+header #hamburger .bar {
+    @apply block bg-white w-8 h-0.5 duration-300 my-2.5 mx-auto;
+}
+header #hamburger.on .bar {
+    @apply my-0 first:-rotate-45 first:translate-y-0.5 last:rotate-45 last:-translate-y-0.5 even:opacity-0;
+}
+
+header #hamburger .content {
+    @apply  opacity-0 w-80 -right-full;
+}
+header #hamburger.on .content {
+    @apply block opacity-100 right-0;
+}
+
+header #hamburger .content .link-list {
+    @apply flex flex-wrap justify-around text-center items-center font-bold text-lg;
+}
+header #hamburger .content .link-list li {
+    @apply w-1/2 block my-2;
+}
+
+/* --------------------
+
+    フッター
+
+-------------------- */
+footer .footer-content > * {
+    @apply
+        w-full
+        md:w-1/2
+        lg:w-1/3;
+}
+footer .footer-content .footer-title {
+    @apply
+        text-center my-4
+        xl:w-1/6;
+}
+footer .footer-content .footer-nav {
+    @apply xl:w-7/12;
+}
+footer .footer-content .search-box {
+    @apply
+        hidden
+        lg:block
+        xl:w-1/4;
+}
+
+footer .footer-content .footer-nav > ul {
+    @apply flex-wrap;
+}
+footer .footer-content .footer-nav #gnav-cats {
+    @apply
+        w-full
+        md:w-2/4
+        xl:w-1/4;
+}
+footer .footer-content .footer-nav #gnav-gens {
+    @apply
+        hidden
+        xl:block;
 }
 
 /* --------------------

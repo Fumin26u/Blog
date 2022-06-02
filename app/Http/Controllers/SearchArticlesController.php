@@ -10,61 +10,54 @@ class SearchArticlesController extends Controller
     //
     public function index(Request $request)
     {
-        //
-        // dd($request);
-        $req_key = array_keys($request->query())[0];
-        $req_value = array_values($request->query())[0];
 
-        if ($req_key === '_token') {
-            $req_key = array_keys($request->query())[1];
-            $req_value = array_values($request->query())[1];
-        }
+        $rq = $request->query();
 
         $search_words = '';
 
-        if ($req_key === 'category') {
+        if (array_key_exists('category', $rq)) {
 
             $posts = DB::table('posts')
                 ->join('cat_gen', 'posts.gen_id', '=', 'cat_gen.gen_id')
                 ->join('categories', 'cat_gen.cat_id', '=', 'categories.cat_id')
                 ->select('post_id', 'post_slag', 'post_title', 'post_desc', 'ogp', 'created_at', 'updated_at')
-                ->where('categories.cat_slag', '=', $req_value)
+                ->where('categories.cat_slag', '=', $rq['category'])
                 ->where('post_stats', 'public')
                 ->orderBy('created_at', 'desc')
                 ->get();
 
             $sw = DB::table('categories')
                 ->select('cat_name')
-                ->where('cat_slag', '=', $req_value)
+                ->where('cat_slag', '=', $rq['category'])
                 ->get();
             $search_words = $sw[0]->cat_name;
 
-        } else if ($req_key === 'genre') {
+        } else if (array_key_exists('genre', $rq)) {
 
             $posts = DB::table('posts')
                 ->join('genres', 'posts.gen_id', '=', 'genres.gen_id')
                 ->select('post_id', 'post_slag', 'post_title', 'post_desc', 'ogp', 'created_at', 'updated_at')
-                ->where('genres.gen_slag', '=', $req_value)
+                ->where('genres.gen_slag', '=', $rq['genre'])
                 ->where('post_stats', 'public')
                 ->orderBy('created_at', 'desc')
                 ->get();
 
             $sw = DB::table('genres')
                 ->select('gen_name')
-                ->where('gen_slag', '=', $req_value)
+                ->where('gen_slag', '=', $rq['genre'])
                 ->get();
             $search_words = $sw[0]->gen_name;
 
-        } else if ($req_key === 'search') {
+        } else if (array_key_exists('search', $rq)) {
 
             $posts = DB::table('posts')
                 ->select('post_id', 'post_slag', 'post_title', 'post_desc', 'ogp', 'created_at', 'updated_at')
-                ->where('post_content', 'like', '%' . $req_value . '%')
+                ->where('post_content', 'like', '%' . $rq['search'] . '%')
                 ->where('post_stats', 'public')
                 ->orderBy('created_at', 'desc')
                 ->get();
 
-            $search_words = $req_value;
+            $search_words = $rq['search'];
 
         }
 

@@ -36,7 +36,7 @@
                     value="@if(isset($_GET['search'])) {{$_GET['search']}} @endif"
                     placeholder=" 記事を検索"
                 >
-                <input type="submit" value="検索" class="btn-submit border-white hover:text-black hover:bg-white">
+                <input type="submit" value="検索" class="btn-common border-white hover:text-black hover:bg-white">
             </form>
         </section>
     </div>

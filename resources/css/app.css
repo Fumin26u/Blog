@@ -137,7 +137,7 @@ main section .content {
 }
 
 /* submitボタン */
-.btn-submit {
+.btn-common {
     @apply px-3 py-1.5 border-2 border-solid transition-all duration-200;
 }
 
@@ -146,6 +146,10 @@ main section .content {
     ヘッダー
 
 -------------------- */
+header {
+    @apply sticky top-0;
+}
+
 @media (min-width: 1296px) {
     header .header-content {
         @apply mx-auto;
@@ -309,5 +313,40 @@ footer .footer-content .footer-nav #gnav-gens {
 }
 .articles .post-content ol {
     @apply list-decimal;
+}
+
+/* --------------------
+
+    記事一覧ページ
+
+-------------------- */
+.post-index tr {
+    @apply border border-solid border-black;
+}
+.post-index th,
+.post-index td {
+    @apply p-1;
+}
+
+.post-index .id,
+.post-index .count,
+.post-index .created,
+.post-index .updated,
+.post-index .show,
+.post-index .edit {
+    @apply text-center;
+}
+
+.post-index .id { width: 4%; }
+.post-index .title { width: 10%; }
+.post-index .description { width: 46%; }
+.post-index .count { width: 4%; }
+.post-index .created { width: 10%; }
+.post-index .updated { width: 10%; }
+.post-index .show { width: 6%; }
+.post-index .edit { width: 6%; }
+
+.post-index td a {
+    @apply hover:no-underline font-bold;
 }
 

@@ -20,7 +20,7 @@ class ArticleController extends Controller
         $articles = DB::table('posts')
         ->select('post_id', 'post_slag', 'post_title', 'post_desc', 'post_content', 'ogp', 'watch_count', 'created_at', 'updated_at')
         ->orderBy('created_at', 'desc')
-        ->get();
+        ->paginate(15);
 
         // dd($articles);
         return view('articles/index', compact('articles'));

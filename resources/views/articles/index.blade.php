@@ -40,6 +40,9 @@
             </tbody>
         </table>
     </div>
+    <div class="pagination my-2">
+        {{ $articles->links() }}
+    </div>
 </section>
 </main>
 @endsection

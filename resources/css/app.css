@@ -146,6 +146,10 @@ main section .content {
     ヘッダー
 
 -------------------- */
+header {
+    @apply sticky top-0;
+}
+
 @media (min-width: 1296px) {
     header .header-content {
         @apply mx-auto;

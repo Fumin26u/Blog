@@ -459,6 +459,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex {
   display: flex;
 }
+.table {
+  display: table;
+}
 .grid {
   display: grid;
 }
@@ -540,6 +543,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-brown {
   --tw-border-opacity: 1;
   border-color: rgb(50 22 11 / var(--tw-border-opacity));
+}
+.border-blue {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 114 143 / var(--tw-border-opacity));
+}
+.border-green {
+  --tw-border-opacity: 1;
+  border-color: rgb(14 143 0 / var(--tw-border-opacity));
 }
 .border-white {
   --tw-border-opacity: 1;
@@ -657,13 +668,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.text-green {
-  --tw-text-opacity: 1;
-  color: rgb(14 143 0 / var(--tw-text-opacity));
-}
 .text-blue {
   --tw-text-opacity: 1;
   color: rgb(0 114 143 / var(--tw-text-opacity));
+}
+.text-green {
+  --tw-text-opacity: 1;
+  color: rgb(14 143 0 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -810,7 +821,6 @@ main section .content {
 .post-list li > a, .post-list .no-link {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  display: block;
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -928,7 +938,7 @@ main section .content {
 }
 
 /* submitボタン */
-.btn-submit {
+.btn-common {
   border-width: 2px;
   border-style: solid;
   padding-left: 0.75rem;
@@ -983,12 +993,13 @@ header .header-nav {
 
 header .search-box {
   display: none;
-  width: 33.333333%;
+  width: 40%;
 }
 
 @media (min-width: 1024px) {
   header .search-box {
     display: block;
+    width: 33.333333%;
   }
 }
 
@@ -1253,44 +1264,101 @@ footer .footer-content .footer-nav #gnav-gens {
 .articles .post-content ol {
   list-style-type: decimal;
 }
+
+/* --------------------
+
+    記事一覧ページ
+
+-------------------- */
+.post-index tr {
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(27 17 13 / var(--tw-border-opacity));
+}
+.post-index th, .post-index td {
+  padding: 0.25rem;
+}
+
+.post-index .id, .post-index .count, .post-index .created, .post-index .updated, .post-index .show, .post-index .edit {
+  text-align: center;
+}
+
+.post-index .id { width: 4%; }
+.post-index .title { width: 10%; }
+.post-index .description { width: 46%; }
+.post-index .count { width: 4%; }
+.post-index .created { width: 10%; }
+.post-index .updated { width: 10%; }
+.post-index .show { width: 6%; }
+.post-index .edit { width: 6%; }
+
+.post-index td a {
+  font-weight: 700;
+}
+
+.post-index td a:hover {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
 .hover\:bg-brown:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(50 22 11 / var(--tw-bg-opacity));
 }
+
+.hover\:bg-blue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 114 143 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-green:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 143 0 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(27 17 13 / var(--tw-bg-opacity));
 }
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(27 17 13 / var(--tw-text-opacity));
 }
+
 .hover\:text-brown:hover {
   --tw-text-opacity: 1;
   color: rgb(50 22 11 / var(--tw-text-opacity));
 }
+
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
+
 .hover\:no-underline:hover {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
 }
+
 @media (prefers-color-scheme: dark) {
   .dark\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
+
 @media (min-width: 640px) {
   .sm\:ml-0 {
     margin-left: 0px;
@@ -1327,6 +1395,7 @@ footer .footer-content .footer-nav #gnav-gens {
     text-align: right;
   }
 }
+
 @media (min-width: 768px) {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1338,6 +1407,7 @@ footer .footer-content .footer-nav #gnav-gens {
     border-left-width: 1px;
   }
 }
+
 @media (min-width: 1024px) {
   .lg\:px-8 {
     padding-left: 2rem;

@@ -36,7 +36,7 @@
                 value="@if(isset($_GET['search'])) {{$_GET['search']}} @endif"
                 placeholder=" 記事を検索"
             >
-            <input type="submit" value="検索" class="btn-submit border-white hover:text-brown hover:bg-white">
+            <input type="submit" value="検索" class="btn-common border-white hover:text-brown hover:bg-white">
         </form>
     </section>
     <section id="hamburger" class="mx-3">
@@ -85,7 +85,7 @@
                         value="@if(isset($_GET['search'])) {{$_GET['search']}} @endif"
                         placeholder=" 記事を検索"
                     >
-                    <input type="submit" value="検索" class="btn-submit mt-4 btn-submit border-black hover:text-white hover:bg-black">
+                    <input type="submit" value="検索" class="btn-common mt-4 border-black hover:text-white hover:bg-black">
                 </form>
             </div>
         </div>

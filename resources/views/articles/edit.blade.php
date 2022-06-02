@@ -61,7 +61,7 @@
             </dd>
         </div>
     </dl>
-    <input type="submit" class="px-4 btn-submit border-brown hover:bg-brown hover:text-white" value="登録">
+    <input type="submit" class="px-4 btn-common border-brown hover:bg-brown hover:text-white" value="登録">
 </form>
 <form action="{{ route('articles/destroy', ['id' => $post->post_id]) }}" method="POST" id="delete_{{ $post->post_id }}">
     @csrf

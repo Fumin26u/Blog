@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Post;
 
@@ -108,14 +109,17 @@ class ArticleController extends Controller
             return view('show/index');
         }
 
+        // ログインしていない場合の処理
         // 該当記事の閲覧回数を取得
-        $watch_counts = $post->watch_count;
-
-        // 閲覧回数を1増やし更新
-        $watch_counts++;
-        $post->watch_count = $watch_counts;
-
-        $post->save();
+        if (!Auth::check()) {
+            $watch_counts = $post->watch_count;
+    
+            // 閲覧回数を1増やし更新
+            $watch_counts++;
+            $post->watch_count = $watch_counts;
+    
+            $post->save();
+        }
 
         return view('show/index', compact('post'));
     }

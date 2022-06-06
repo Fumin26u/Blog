@@ -103,6 +103,11 @@ class ArticleController extends Controller
         //
         $post = Post::find($id);
 
+        // 該当記事が非公開・編集中の場合$postを返さない
+        if ($post->post_stats !== 'public') {
+            return view('show/index');
+        }
+
         // 該当記事の閲覧回数を取得
         $watch_counts = $post->watch_count;
 

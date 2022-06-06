@@ -10,7 +10,17 @@
 @endsection
 
 @section('content')
+
 <main class="articles">
+@if (!isset($post))
+<section class="top-title not-found">
+    <h1>お探しのページは存在しません</h1>
+</section>
+<section class="post-content">
+    <p>お探しのページは非公開、または削除済みのページです。</p>
+    <a href="{{ url('/') }}">トップページに戻る</a>
+</section>  
+@else
 <section class="top-title">
     <h1>{{ $post->post_title }}</h1>
     <div class="details">
@@ -21,6 +31,7 @@
 <section class="post-content">
     <div>{!! $post->post_content !!}</div>
 </section>
+@endif
 
 @if(Auth::check())
 <div class="link-area">

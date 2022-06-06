@@ -12,7 +12,7 @@
 @section('content')
 
 <main class="articles">
-@if (!isset($post))
+@if (!isset($post) && !Auth::check())
 <section class="top-title not-found">
     <h1>お探しのページは存在しません</h1>
 </section>

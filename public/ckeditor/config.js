@@ -37,4 +37,6 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
     config.extraPlugins = 'codesnippet,widget,clipboard,dialog,lineutils,dialogui,notification';
+
+	config.forcePasteAsPlainText = true;
 };

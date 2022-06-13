@@ -17,8 +17,6 @@ class CreateCategoryTable extends Migration
             $table->id('cat_id');
             $table->string('cat_slag', 40);
             $table->string('cat_name', 20);
-
-            // $table->primary('cat_id');
         });
     }
 

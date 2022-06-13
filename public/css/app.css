@@ -1326,6 +1326,10 @@ footer .footer-content .footer-nav #gnav-gens {
   list-style-type: decimal;
 }
 
+.articles .post-content code {
+  white-space: pre-wrap;
+}
+
 /* --------------------
 
     記事一覧ページ

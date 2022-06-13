@@ -113,11 +113,11 @@ class ArticleController extends Controller
         // 該当記事の閲覧回数を取得
         if (!Auth::check()) {
             $watch_counts = $post->watch_count;
-    
+
             // 閲覧回数を1増やし更新
             $watch_counts++;
             $post->watch_count = $watch_counts;
-    
+
             $post->save();
         }
 
@@ -176,7 +176,6 @@ class ArticleController extends Controller
         $post->post_content = $request->input('content');
         $post->post_stats = $request->input('stats');
         $post->ogp = is_null($img_path) || $img_path === '' ? 'images/ogp/noimage.png' : $img_path;
-        $post->watch_count = 0;
 
         $post->save();
 

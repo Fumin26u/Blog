@@ -17,8 +17,6 @@ class CreateTagTable extends Migration
             $table->id('tag_id');
             $table->string('tag_slag', 80);
             $table->string('tag_name', 40);
-
-            // $table->primary('tag_id');
         });
     }
 

@@ -17,8 +17,6 @@ class CreateGenreTable extends Migration
             $table->id('gen_id');
             $table->string('gen_slag', 40);
             $table->string('gen_name', 20);
-
-            // $table->primary('gen_id');
         });
     }
 
